@@ -1,1 +1,6 @@
+DA FARE
+-Vedere differenza tra "id" e "classi" (CSS)
+-Lavorando dal file "style.css" colorare di blu tutti i tag "p" e di porpora solo il primo tag "p"
+
+COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
