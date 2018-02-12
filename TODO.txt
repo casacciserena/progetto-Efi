@@ -1,6 +1,8 @@
 DA FARE
--Vedere differenza tra "id" e "classi" (CSS)
--Lavorando dal file "style.css" colorare di blu tutti i tag "p" e di porpora solo il primo tag "p"
+-Vedere http://www.html.it/pag/16051/inserire-le-immagini/
+-Inserire un'immagine a piacere sotto il titolo allineata a sinistra della pagina
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
+-Vedere differenza tra "id" e "classi" (CSS)
+-Lavorando dal file "style.css" colorare di blu tutti i tag "p" e di porpora solo il primo tag "p"
