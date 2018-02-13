@@ -2,15 +2,23 @@
 h3 {
 	color: green;
 }
-
 #para1 {
 	color: purple
 }
-
 .paraClass {
 	color: blue
 }
 
 img { 
-    font-size: 20px 
+    front-size: 20px 
+}
+
+#gatto{
+	text-align:right
+}
+#div1{
+	width:50%;
+}
+#div2{
+	width:50%;
 }
