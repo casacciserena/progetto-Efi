@@ -1,8 +1,10 @@
 DA FARE
--Vedere http://www.html.it/pag/16051/inserire-le-immagini/
--Inserire un'immagine a piacere sotto il titolo allineata a sinistra della pagina
+-Vedere http://www.html.it/pag/16048/i-percorsi-assoluti-e-relativi/
+-Inserire una seconda immagine, sempre sotto il titolo, ma allineata a destra e sulla tessa linea dell'immagine dell'ape già inserita usando però un percorso relativo e non assoluto
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
 -Vedere differenza tra "id" e "classi" (CSS)
 -Lavorando dal file "style.css" colorare di blu tutti i tag "p" e di porpora solo il primo tag "p"
+-Vedere http://www.html.it/pag/16051/inserire-le-immagini/
+-Inserire un'immagine a piacere sotto il titolo allineata a sinistra della pagina

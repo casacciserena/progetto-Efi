@@ -2,14 +2,15 @@
 h3 {
 	color: green;
 }
+
 #para1 {
 	color: purple
 }
+
 .paraClass {
 	color: blue
 }
 
 img { 
-    front-size: 20 px 
-	
+    font-size: 20px 
 }
