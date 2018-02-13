@@ -3,7 +3,7 @@ h3 {
 	color: green;
 }
 #para1 {
-	clear:both;
+	clear: both;
 	color: purple;
 }
 .paraClass {
@@ -11,19 +11,18 @@ h3 {
 }
 
 img { 
-    width:80%;
+    width: 80%;
 	
 }
 
-
-#div1{
-    float:left;
-	width:50%;
-	text-align:left;
+#div1 {
+    float: left;
+	width: 50%;
+	text-align: left;
 	
 }
-#div2{
-	float:left;
-	width:50%;
-	text-align:right;
+#div2 {
+	float: left;
+	width: 50%;
+	text-align: right;
 }
