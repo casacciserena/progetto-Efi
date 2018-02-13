@@ -3,22 +3,27 @@ h3 {
 	color: green;
 }
 #para1 {
-	color: purple
+	clear:both;
+	color: purple;
 }
 .paraClass {
-	color: blue
+	color: blue;
 }
 
 img { 
-    front-size: 20px 
+    width:80%;
+	
 }
 
-#gatto{
-	text-align:right
-}
+
 #div1{
+    float:left;
 	width:50%;
+	text-align:left;
+	
 }
 #div2{
+	float:left;
 	width:50%;
+	text-align:right;
 }
