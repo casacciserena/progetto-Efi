@@ -1,0 +1,4 @@
+com\serena\animalproject\configuration\HibernateConfiguration.class
+com\serena\animalproject\model\Animal.class
+com\serena\animalproject\service\SpringService.class
+com\Efi\beachmanager\Application.class

@@ -1,4 +1,4 @@
-package it.thinkopen.configuration;
+package com.serena.animalproject.configuration;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +15,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by Francesco Arciello on 13/03/17.
- */
-
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"it.thinkopen"})
+@ComponentScan({"com.serena.animalproject"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfiguration {
 
@@ -32,7 +28,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[]{"it.thinkopen.orm"});
+        sessionFactory.setPackagesToScan(new String[]{"com.serena.animalproject.model"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
