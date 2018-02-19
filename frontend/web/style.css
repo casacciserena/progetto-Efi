@@ -8,12 +8,23 @@ h3 {
 }
 .paraClass {
 	color: blue;
+
 }
 
 img { 
     width: 80%;
 	
 }
+ button{
+	 outline:none;
+	 text-align:center;
+	 text-decoration:none;
+	 font:bold 12px;
+	 color:purple;
+	 padding:10px 20px;
+	 border:solid 1px;
+	 background:#0095cd;
+ }
 
 #div1 {
     float: left;
