@@ -1,4 +1,4 @@
-package com.Efi.beachmanager;
+package com.serena.animalproject;
 
 import java.util.Arrays;
 
