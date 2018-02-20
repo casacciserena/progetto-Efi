@@ -26,7 +26,11 @@ img {
 	 border:solid 1px;
 	 background:#0095cd;
  }
-
+ 
+ #fraseCss{
+	 display:none;
+ }
+ 
 #div1 {
     float: left;
 	width: 50%;

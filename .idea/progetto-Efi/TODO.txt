@@ -1,0 +1,17 @@
+DA FARE
+-Ridefinire percorso delle immagini per visualizzarle nuovamente
+-Centrare bottone creato
+-Collegare il file "logic.js" al file "index.html" (http://www.html.it/pag/15249/includere-un-file-esterno/)
+-Spostare codice Javascript scritto nel file "index.html" nel file "logic.js"
+
+COMPLETATI
+-Creazione titolo in alto, centrale e di colore rosso
+-Vedere differenza tra "id" e "classi" (CSS)
+-Lavorando dal file "style.css" colorare di blu tutti i tag "p" e di porpora solo il primo tag "p"
+-Vedere http://www.html.it/pag/16051/inserire-le-immagini/
+-Inserire un'immagine a piacere sotto il titolo allineata a sinistra della pagina
+-Vedere http://www.html.it/pag/16048/i-percorsi-assoluti-e-relativi/
+-Inserire una seconda immagine, sempre sotto il titolo, ma allineata a destra e sulla tessa linea dell'immagine dell'ape già inserita usando però un percorso relativo e non assoluto
+-Creare file "logic.js" e salvarlo nello stesso percorso di "index.html" e "style.css"
+-Nel file "index.html" creare un <button> al di sotto delle due immagini all'interno di un <div>
+-Stampare nella console di Chrome la frase "Ciao Serena, come va oggi?" quando si clicca il bottone creato (https://www.w3schools.com/jsref/event_onclick.asp)
