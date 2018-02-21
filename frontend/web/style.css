@@ -27,10 +27,13 @@ img {
 	 background:#0095cd;
  }
  
- #fraseCss{
+ #fraseCss {
 	 display:none;
  }
- 
+#nome {
+	color:darkviolet
+}
+	
 #div1 {
     float: left;
 	width: 50%;
