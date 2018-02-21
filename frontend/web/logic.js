@@ -1,16 +1,24 @@
 
 function myFunction() {
 	console.log("Ciao Serena, come va oggi?");
-    var nome = document.getElementById("name").value; 
-    var arrayNome = nome.slit("");
-    if(arreyNome[arreyNome.length-] == "o"|| arreyNome[arreyNome.length-] == "O") {
-	    document.getElementById("nome").style.color "lightblue";
-   } if(arreyNome[arreyNome.length-] == "a"|| arreyNome[arreyNome.length-] == "A") {
-	document.getElementById("nome").style.color "pink"; 
-   } else {
-	document.getElementById("nome").style.color "lightgreen";
-   }		
-	document.getElementById("nome").innerHTML = " " + nome;
+	
+    var nome = document.getElementById("name").value;
+
+	var elementNome = document.getElementById("nome");
+	
+    var arrayNome = nome.split("");
+	console.log(arrayNome);
+	
+    if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
+		elementNome.style.color = "lightblue";
+	} else if (arrayNome[arrayNome.length-1] == "a" || arrayNome[arrayNome.length-1] == "A") {
+		elementNome.style.color = "pink"; 
+	} else {
+		elementNome.style.color = "green";
+	}		
+	
+	elementNome.innerHTML = " " + nome;
+	
 	document.getElementById("fraseCss").style.display = "initial";
 }
  

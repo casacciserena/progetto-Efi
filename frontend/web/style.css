@@ -14,9 +14,6 @@ img {
  #fraseCss {
 	 display:none;
  }
-#nome {
-	color:darkviolet
-}
 	
 #div1 {
     float: left;
@@ -24,6 +21,7 @@ img {
 	text-align: left;
 	
 }
+
 #div2 {
 	float: left;
 	width: 50%;
