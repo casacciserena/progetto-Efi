@@ -16,17 +16,22 @@ function myFunction() {
 	} else {
 		elementNome.style.color = "green";
 	}	*/
-switch	(arreyNomeome[arreyNome.lenght-1]) {
+switch	(arrayNome[arrayNome.length-1]) {
 	case "o": 
-	  elementNone.style.color = "lightblue";
+	  elementNome.style.color = "lightblue";
+	  break;
 	case "O":
 	  elementNome.style.color = "lightblue";
+	  break;
 	case "a":   
 	  elementNome.style.color = "pink";
+	  break;
 	case "A":
       elementNome.style.color = "pink";
+	  break;
 	default:
-       elementNome.style.color = "green";	
+       elementNome.style.color = "green";
+	   break;
 }
 	
 	
