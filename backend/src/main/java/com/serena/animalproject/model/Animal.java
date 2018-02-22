@@ -20,7 +20,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_ANIMAL")
+@Table(name = "TBL_ANIMAL")
 @NamedQueries({
 //	@NamedQuery(name = "getDisplayByBranchId", query = "" +
 //		"SELECT d " +

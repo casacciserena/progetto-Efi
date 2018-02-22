@@ -16,7 +16,8 @@ function myFunction() {
 	} else {
 		elementNome.style.color = "green";
 	}	*/
-switch	(arrayNome[arrayNome.length-1]) {
+
+	switch	(arrayNome[arrayNome.length-1]) {
 	case "o": 
 	  elementNome.style.color = "lightblue";
 	  break;
@@ -32,8 +33,7 @@ switch	(arrayNome[arrayNome.length-1]) {
 	default:
        elementNome.style.color = "green";
 	   break;
-}
-	
+	}
 	
 	elementNome.innerHTML = " " + nome;
 	
