@@ -1,4 +1,4 @@
-com\serena\animalproject\configuration\HibernateConfiguration.class
 com\serena\animalproject\model\Animal.class
 com\serena\animalproject\service\SpringService.class
+com\serena\animalproject\configuration\DatabaseConfiguration.class
 com\serena\animalproject\Application.class
