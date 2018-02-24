@@ -1,8 +1,8 @@
 package com.serena.animalproject.model;
 
 //import java.util.List;
-//
-//import javax.persistence.Basic;
+
+import javax.persistence.Basic;
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 //import javax.persistence.JoinTable;
 //import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
-//import javax.persistence.NamedQuery;
+import javax.persistence.NamedQuery;
 //import javax.persistence.OneToMany;
 //import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
@@ -22,56 +22,33 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TBL_ANIMAL")
 @NamedQueries({
-//	@NamedQuery(name = "getDisplayByBranchId", query = "" +
-//		"SELECT d " +
-//		"FROM Display d, Asset a " +
-//		"WHERE d.assetId = a.assetId " +
-//		"AND a.branch.branchId = :branchId " +
-//		"ORDER BY d.displayName"
-//	),
-//	@NamedQuery(name = "getDisplayByBranchCode", query = "" +
-//			"SELECT d " +
-//			"FROM Display d, Asset a " +
-//			"WHERE d.assetId = a.assetId " +
-//			"AND a.branch.branchCode = :branchCode " +
-//			"ORDER BY d.displayName"
-//	),
-//	@NamedQuery(name = "getDisplayByAreaCode", query = "" +
-//			"SELECT d " +
-//			"FROM Display d, Asset a " +
-//			"WHERE d.assetId = a.assetId " +
-//			"AND a.branch.area.areaCode = :areaCode " +
-//			"ORDER BY d.displayName"
-//	),
-//	@NamedQuery(name = "getDisplayByBankCode", query = "" +
-//			"SELECT d " +
-//			"FROM Display d, Asset a " +
-//			"WHERE d.assetId = a.assetId " +
-//			"AND a.branch.area.bank.bankCode = :bankCode " +
-//			"ORDER BY d.displayName"
-//	),
-//        @NamedQuery(name = "deleteDisplayById", query = "" +
-//                "DELETE FROM Display d WHERE d.displayId = :displayId"
-//        )
+	@NamedQuery(name = "getAnimals", query = "" +
+		"SELECT a " +
+		"FROM Animal a " +
+		"ORDER BY a.animalName"
+	),
 })
 public class Animal {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="animalSeq")
-    @SequenceGenerator(
-            name="animalSeq",
-            sequenceName="SQ_ANIMAL_01",
-            allocationSize=1
-    )
-    @Column(name = "ANIMAL_ID", nullable=false, updatable=false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ANIMAL_ID", nullable = false, updatable = false)
     private long animalId;
 
-//    @Basic
-//    @Column(name = "TE_NAME", length = 100)
-//    private String displayName;
-//
-//    @Basic(optional = false)
-//    @Column(name = "CO_TYPE", length = 100)
-//    private String displayCode;
+    @Basic(optional = false)
+    @Column(name = "TE_NAME")
+    private String animalName;
+
+    @Basic
+    @Column(name = "TE_FAMILY")
+    private String animalFamily;
+
+    @Basic
+    @Column(name = "TE_RACE")
+    private String animalRace;
+
+    @Basic
+    @Column(name = "TE_DESCENT")
+    private String animalDescent;
 
 //    @ManyToMany
 //    @JoinTable
@@ -100,5 +77,61 @@ public class Animal {
      */
     public void setAnimalId(long animalId) {
         this.animalId = animalId;
+    }
+
+    /**
+     * @return the animalName
+     */
+    public String getAnimalName() {
+        return animalName;
+    }
+
+    /**
+     * @param animalName the animalName to set
+     */
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
+    }
+
+    /**
+     * @return the animalFamily
+     */
+    public String getAnimalFamily() {
+        return animalFamily;
+    }
+
+    /**
+     * @param animalFamily the animalFamily to set
+     */
+    public void setAnimalFamily(String animalFamily) {
+        this.animalFamily = animalFamily;
+    }
+
+    /**
+     * @return the animalRace
+     */
+    public String getAnimalRace() {
+        return animalRace;
+    }
+
+    /**
+     * @param animalRace the animalRace to set
+     */
+    public void setAnimalRace(String animalRace) {
+        this.animalRace = animalRace;
+    }
+
+    /**
+     * @return the animalDescent
+     */
+    public String getAnimalDescent() {
+        return animalDescent;
+    }
+
+    /**
+     * @param animalDescent the animalDescent to set
+     */
+    public void setAnimalDescent(String animalDescent) {
+        this.animalDescent = animalDescent;
     }
 }

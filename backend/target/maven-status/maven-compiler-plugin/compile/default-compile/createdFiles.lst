@@ -1,4 +1,7 @@
 com\serena\animalproject\model\Animal.class
-com\serena\animalproject\service\SpringService.class
-com\serena\animalproject\configuration\DatabaseConfiguration.class
+com\serena\animalproject\model\bean\response\AnimalBeanListResponse.class
 com\serena\animalproject\Application.class
+com\serena\animalproject\model\bean\AnimalBean.class
+com\serena\animalproject\configuration\DatabaseConfiguration.class
+com\serena\animalproject\service\AnimalService.class
+com\serena\animalproject\utility\JPAAbstractService.class
