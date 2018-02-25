@@ -9,6 +9,14 @@ function myFunction() {
     var arrayNome = nome.split("");
 	console.log(arrayNome);
 	
+	var animal = {
+		nomeAnimale:"anacleto" , 
+        famiglia:"tytonidae"
+		razza:"barbagianni"
+		discendenza:"tyto"
+		numeroZampe:"2"
+	}
+		
    /* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
 		elementNome.style.color = "lightblue";
 	} else if (arrayNome[arrayNome.length-1] == "a" || arrayNome[arrayNome.length-1] == "A") {
