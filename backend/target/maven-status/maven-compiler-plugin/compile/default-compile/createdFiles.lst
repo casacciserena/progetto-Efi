@@ -1,4 +1,10 @@
-com\serena\animalproject\configuration\HibernateConfiguration.class
 com\serena\animalproject\model\Animal.class
-com\serena\animalproject\service\SpringService.class
+com\serena\animalproject\service\impl\AnimalServiceImpl.class
+com\serena\animalproject\model\bean\response\AnimalBeanListResponse.class
 com\serena\animalproject\Application.class
+com\serena\animalproject\dao\AnimalDao.class
+com\serena\animalproject\model\bean\AnimalBean.class
+com\serena\animalproject\configuration\DatabaseConfiguration.class
+com\serena\animalproject\dao\impl\AnimalDaoImpl.class
+com\serena\animalproject\utility\RestController.class
+com\serena\animalproject\service\AnimalService.class

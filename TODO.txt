@@ -1,8 +1,6 @@
 DA FARE
 -Vedere http://www.html.it/pag/47112/oggetti-javascript-proprieta-metodi-this/
--Dichiarare, nel file logic.js", un oggetto contenente i campi nomeAnimale, famiglia, razza, discendenza, numeroZampe
--Vedere http://www.html.it/pag/16055/tabella-struttura-di-base/
--Come ultimo elemento nel file "index.html", tra il <div> con id uguale a "fraseCss" e la chiusura del tag </body>, creare una piccola tabella  
+-Dichiarare, nel file logic.js", un oggetto contenente i campi nomeAnimale, famiglia, razza, discendenza, numeroZampe  
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
@@ -21,3 +19,5 @@ COMPLETATI
 -Spostare codice Javascript scritto nel file "index.html" nel file "logic.js"
 -Vedere https://www.w3schools.com/js/js_switch.asp
 -Facendo riferimento all'"if" definito nel file "logic.js", scrivere un codice "analogo" ma con la struttura "switch"
+-Vedere http://www.html.it/pag/16055/tabella-struttura-di-base/
+-Come ultimo elemento nel file "index.html", tra il <div> con id uguale a "fraseCss" e la chiusura del tag </body>, creare una piccola tabella
