@@ -1,40 +1,6 @@
 package com.serena.animalproject.model.bean;
 
 import java.io.Serializable;
-//import java.util.List;
-//import java.util.Set;
-
-///**
-// * {
-// *   "consultant_id": 991982,
-// *   "consultant_code": "C0201",
-// *   "first_name": "Mario",
-// *   "last_name": "Rossi",
-// *   "sex": "MALE",
-// *   "role_description": "Area crediti",
-// *   "mail": "massimo@ferrara.it",
-// *   "profile_description": "	",
-// *   "mobile_phone": "3494939339",
-// *   "image_resource_id": 737782,
-// *   "workstation_asset_id": 192891,
-// *   "callable": true,
-// *   "remote": false,
-// *   "currently_available": true,
-// *   "help_priority": 0,
-// *   "identification_code": "A122344",
-// *   "notifications": {
-// *     "mobile_phone": true,
-// *     "universal_client": true
-// *   },
-// *   "services_id": [
-// *   	9921,
-//    	9922,
-//    	9933,
-//    	9292,
-//    	9392
-//	 ]
-// * }
-// */
 
 public class AnimalBean implements Serializable {
 
@@ -43,8 +9,6 @@ public class AnimalBean implements Serializable {
     private String animal_family;
     private String animal_race;
     private String animal_descent;
-//    private Set<AssetBean> asset_set_bean;
-//    private List<DisplayCellBean> display_cell_list_bean;
 
     public AnimalBean() {
 

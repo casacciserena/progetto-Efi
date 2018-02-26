@@ -1,22 +1,13 @@
 package com.serena.animalproject.model;
 
-//import java.util.List;
-
 import javax.persistence.Basic;
-//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-//import javax.persistence.OneToMany;
-//import javax.persistence.OrderBy;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -34,7 +25,7 @@ public class Animal {
     @Column(name = "ANIMAL_ID", nullable = false, updatable = false)
     private long animalId;
 
-    @Basic//(optional = false)
+    @Basic(optional = false)
     @Column(name = "TE_NAME")
     private String animalName;
 
@@ -49,21 +40,6 @@ public class Animal {
     @Basic
     @Column(name = "TE_DESCENT")
     private String animalDescent;
-
-//    @ManyToMany
-//    @JoinTable
-//            (
-//                    name="TBCM_DISPLAY_ASSET",
-//                    joinColumns={ @JoinColumn(name="DISPLAY_ID", referencedColumnName="DISPLAY_ID") },
-//                    inverseJoinColumns={ @JoinColumn(name="ASSET_ID", referencedColumnName="ASSET_ID") }
-//            )
-//    @OrderBy("displayId")
-//    private List<Asset> assetList;
-
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinColumn(name = "DISPLAY_ID", referencedColumnName = "DISPLAY_ID")
-//    @OrderBy("displayId")
-//    private List<DisplayCell> displayCellList;
 
     /**
      * @return the animalId
