@@ -10,7 +10,10 @@ img {
 	 padding:10px 20px;
 	 border:1px;
  }
- 
+ for (i = 0; i < 20; i++) {
+    text += "" + i + "<br>";
+}
+
  #fraseCss {
 	 display:none;
  }

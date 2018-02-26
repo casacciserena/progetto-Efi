@@ -8,14 +8,16 @@ function myFunction() {
 	
     var arrayNome = nome.split("");
 	console.log(arrayNome);
+
 	
 	var animal = {
-		nomeAnimale:"anacleto" , 
-        famiglia:"tytonidae"
-		razza:"barbagianni"
-		discendenza:"tyto"
-		numeroZampe:"2"
+		nomeAnimale:"anacleto" ,		
+        famiglia:"tytonidae",
+		razza:"barbagianni",
+		discendenza:"tyto",
+		numeroZampe:"2",
 	}
+	
 		
    /* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
 		elementNome.style.color = "lightblue";
@@ -48,5 +50,8 @@ function myFunction() {
 	document.getElementById("fraseCss").style.display = "initial";
 }
 
- 
-		
+
+ for (i = 0; i < 20; i++) {
+	 
+	console.log("Ciao!!!!! :)" + i);
+}		
