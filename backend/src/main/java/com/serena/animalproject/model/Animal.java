@@ -34,7 +34,7 @@ public class Animal {
     @Column(name = "ANIMAL_ID", nullable = false, updatable = false)
     private long animalId;
 
-    @Basic(optional = false)
+    @Basic//(optional = false)
     @Column(name = "TE_NAME")
     private String animalName;
 
