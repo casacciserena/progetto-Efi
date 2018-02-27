@@ -1,40 +1,57 @@
 
 function myFunction() {
 	console.log("Ciao Serena, come va oggi?");
-	
+
     var nome = document.getElementById("name").value;
 
 	var elementNome = document.getElementById("nome");
-	
+
     var arrayNome = nome.split("");
 	console.log(arrayNome);
 
-	
+
 	var animal = {
-		nomeAnimale:"anacleto" ,		
+		nomeAnimale:"anacleto" ,
         famiglia:"tytonidae",
 		razza:"barbagianni",
 		discendenza:"tyto",
 		numeroZampe:"2",
 	}
-	
-		
+
+
+	var animal = {
+		nomeAnimale:"poldo",
+		   famiglia:"strygidae",
+		razza:"gufo reale",
+		discendenza:"b.bulbo",
+		numeroZampe:"2",
+	}
+
+
+var animal = {
+	nomeAnimale:"arpa",
+      famiglia:"accipitridae",
+	razza:"aquila arpia",
+	discendenza:"harpia harpyja",
+	numeroZampe:"2"
+}
+
    /* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
 		elementNome.style.color = "lightblue";
 	} else if (arrayNome[arrayNome.length-1] == "a" || arrayNome[arrayNome.length-1] == "A") {
-		elementNome.style.color = "pink"; 
+		elementNome.style.color = "pink";
 	} else {
 		elementNome.style.color = "green";
 	}	*/
 
 	switch	(arrayNome[arrayNome.length-1]) {
-	case "o": 
+	case "o":
 	  elementNome.style.color = "lightblue";
 	  break;
 	case "O":
 	  elementNome.style.color = "lightblue";
 	  break;
-	case "a":   
+	case "a":
 	  elementNome.style.color = "pink";
 	  break;
 	case "A":
@@ -44,14 +61,14 @@ function myFunction() {
        elementNome.style.color = "green";
 	   break;
 	}
-	
+
 	elementNome.innerHTML = " " + nome;
-	
+
 	document.getElementById("fraseCss").style.display = "initial";
 }
 
 
  for (i = 0; i < 20; i++) {
-	 
+
 	console.log("Ciao!!!!! :)" + i);
-}		
+}
