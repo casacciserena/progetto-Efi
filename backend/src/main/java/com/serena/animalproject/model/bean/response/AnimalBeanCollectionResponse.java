@@ -1,28 +1,29 @@
 package com.serena.animalproject.model.bean.response;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.serena.animalproject.model.bean.AnimalBean;
 
-public class AnimalBeanListResponse {
+public class AnimalBeanCollectionResponse {
 
-    private List<AnimalBean> content;
+    private Collection<AnimalBean> content;
 
-    public AnimalBeanListResponse() {
+    public AnimalBeanCollectionResponse() {
 
     }
 
     /**
      * @return the content
      */
-    public List<AnimalBean> getContent() {
+    public Collection<AnimalBean> getContent() {
         return content;
     }
 
     /**
      * @param content the content to set
      */
-    public void setContent(List<AnimalBean> content) {
+    public void setContent(Collection<AnimalBean> content) {
         this.content = content;
     }
 
