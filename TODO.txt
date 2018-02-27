@@ -1,12 +1,4 @@
-DA FARE 
--Dichiarare, nel file logic.js", altri due oggetti contenenti i campi nomeAnimale, famiglia, razza, discendenza, numeroZampe
--Vedere https://www.w3schools.com/jsref/jsref_push.asp
--Dichiarare una variabile di tipo Array vuota e poi inserire all'interno i tre oggetti creati 
--Seguendo la seguente struttura:
-	for (var i = 0; i < Array.lenght; i++) {
-		console.log("nome di ogni animale")
-	}
-stampare in console il nome di ogni animale
+DA FARE  
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
@@ -29,3 +21,11 @@ COMPLETATI
 -Dichiarare, nel file logic.js", un oggetto contenente i campi nomeAnimale, famiglia, razza, discendenza, numeroZampe 
 -Vedere http://www.html.it/pag/16055/tabella-struttura-di-base/
 -Come ultimo elemento nel file "index.html", tra il <div> con id uguale a "fraseCss" e la chiusura del tag </body>, creare una piccola tabella
+-Dichiarare, nel file logic.js", altri due oggetti contenenti i campi nomeAnimale, famiglia, razza, discendenza, numeroZampe
+-Vedere https://www.w3schools.com/jsref/jsref_push.asp
+-Dichiarare una variabile di tipo Array vuota e poi inserire all'interno i tre oggetti creati
+-Seguendo la seguente struttura:
+	for (var i = 0; i < Array.lenght; i++) {
+		console.log("nome di ogni animale")
+	}
+stampare in console il nome di ogni animale

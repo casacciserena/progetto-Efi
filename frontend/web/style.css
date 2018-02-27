@@ -2,27 +2,23 @@ img {
     width: 80%;
 }
 
- button {
-	 outline:none;
-	 text-align:center;
-	 text-decoration:none;
-	 color:lightorange;
-	 padding:10px 20px;
-	 border:1px;
- }
- for (i = 0; i < 20; i++) {
-    text += "" + i + "<br>";
+button {
+	 outline: none;
+	 text-align: center;
+	 text-decoration: none;
+	 color: lightorange;
+	 padding: 10px 20px;
+	 border: 1px;
 }
 
- #fraseCss {
-	 display:none;
- }
+#fraseCss {
+	display: none;
+}
 	
 #div1 {
     float: left;
 	width: 50%;
 	text-align: left;
-	
 }
 
 #div2 {
@@ -31,9 +27,9 @@ img {
 	text-align: right;
 }
 
-td,table {
-	color:pink;
+td, table {
+	color: pink;
 	border: 2px solid;
-	border-collapse:separate;
-	border-spacing:10px;
+	border-collapse: separate;
+	border-spacing: 10px;
 }

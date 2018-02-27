@@ -9,8 +9,7 @@ function myFunction() {
     var arrayNome = nome.split("");
 	console.log(arrayNome);
 
-
-	var animal = {
+	var animal1 = {
 		nomeAnimale:"anacleto" ,
         famiglia:"tytonidae",
 		razza:"barbagianni",
@@ -18,8 +17,7 @@ function myFunction() {
 		numeroZampe:"2",
 	}
 
-
-	var animal = {
+	var animal2 = {
 		nomeAnimale:"poldo",
 		   famiglia:"strygidae",
 		razza:"gufo reale",
@@ -27,14 +25,20 @@ function myFunction() {
 		numeroZampe:"2",
 	}
 
+	var animal3 = {
+		nomeAnimale:"arpa",
+		famiglia:"accipitridae",
+		razza:"aquila arpia",
+		discendenza:"harpia harpyja",
+		numeroZampe:"2"
+	}
 
-var animal = {
-	nomeAnimale:"arpa",
-      famiglia:"accipitridae",
-	razza:"aquila arpia",
-	discendenza:"harpia harpyja",
-	numeroZampe:"2"
-}
+	var animalArray = [];
+	animalArray.push(animal1, animal2, animal3);
+	console.log(animal1.nomeAnimale, animal2.nomeAnimale, animal3.nomeAnimale);
+	for (var i = 0; i < animalArray.length; i++) {
+		console.log(animalArray[i].nomeAnimale);
+	}
 
    /* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
 		elementNome.style.color = "lightblue";
@@ -44,7 +48,7 @@ var animal = {
 		elementNome.style.color = "green";
 	}	*/
 
-	switch	(arrayNome[arrayNome.length-1]) {
+	switch(arrayNome[arrayNome.length-1]) {
 	case "o":
 	  elementNome.style.color = "lightblue";
 	  break;
@@ -67,8 +71,6 @@ var animal = {
 	document.getElementById("fraseCss").style.display = "initial";
 }
 
-
- for (i = 0; i < 20; i++) {
-
+for (i = 0; i < 20; i++) {
 	console.log("Ciao!!!!! :)" + i);
 }
