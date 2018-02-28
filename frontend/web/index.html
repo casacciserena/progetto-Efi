@@ -1,11 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-	<head> 
+	<head>
 		<!-- Caricamento file esterno CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-	
+
 		<title>Title</title>
-		
+
 		<!-- Definizione CSS sulla pagina HTML-->
 		<!-- <style>
 			p {
@@ -13,45 +13,50 @@
 			}
 		</style> -->
 	</head>
-	
+
 	<body>
 		<!-- Definizione CSS direttamente sul tag interessato -->
-		<h1 style="color: red; text-align: center;"> 
+		<h1 style="color: red; text-align: center;">
 			Riordinare la propria vita con con un Click
 		</h1>
-		
+
 		<!-- <img src=http://www.patronato.acli.it/wp-content/uploads/2016/10/ape_quota.jpg> -->
-	    <div id="div1"> 
-		   <img src="../images/ape_quota.jpg"> 
+	    <div id="div1">
+		   <img src="../images/ape_quota.jpg">
 		</div>
-			
-		<div id="div2"> 
-			<img src="../images/gatto-dorme-girasole.jpg">		
+
+		<div id="div2">
+			<img src="../images/gatto-dorme-girasole.jpg">
 		</div>
-		
+
 		<div>
 			<button onclick="myFunction()">click me!</button>
 		</div>
-		
-		<div> 
+
+		<div>
 			<label for="name">Nome:</label>
 			<input id="name" placeholder="inserisci il tuo nome">
 		</div>
-		
-		<div id="fraseCss">ciao<span id="nome"> </span> come va oggi?</div>
-		
-	    <table>
-		
-		<tr><td>nomeAnimale</td><td> Famiglia </td><td> Razza </td><td> Discendenza </td><td> numeroZampe </td></tr>
-		<tr><td>    </td></tr>
-		<tr><td>    </td></tr>
-		<tr><td>    </td><tr>
-		
-		</table>
-	
-	</body>
-	
-	<script src="logic.js" type="text/javascript"></script>
-	
-</html>
 
+		<div id="fraseCss">ciao<span id="nome"> </span> come va oggi?</div>
+
+	  <table>
+			<thaed>
+				<tr>
+					<th>nomeAnimale</th>
+					<th>Famiglia</th>
+					<th>Razza</th>
+					<th>Discendenza</th>
+					<th>numeroZampe</th>
+				</tr>
+			</thead>
+			<tbody id="animalTable">
+
+			</tbody>
+		</table>
+
+	</body>
+
+	<script src="logic.js" type="text/javascript"></script>
+
+</html>

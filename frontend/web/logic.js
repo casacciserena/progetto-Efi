@@ -2,45 +2,14 @@
 function myFunction() {
 	console.log("Ciao Serena, come va oggi?");
 
-    var nome = document.getElementById("name").value;
+  var nome = document.getElementById("name").value;
 
 	var elementNome = document.getElementById("nome");
 
-    var arrayNome = nome.split("");
+  var arrayNome = nome.split("");
 	console.log(arrayNome);
 
-	var animal1 = {
-		nomeAnimale:"anacleto" ,
-        famiglia:"tytonidae",
-		razza:"barbagianni",
-		discendenza:"tyto",
-		numeroZampe:"2",
-	}
-
-	var animal2 = {
-		nomeAnimale:"poldo",
-		   famiglia:"strygidae",
-		razza:"gufo reale",
-		discendenza:"b.bulbo",
-		numeroZampe:"2",
-	}
-
-	var animal3 = {
-		nomeAnimale:"arpa",
-		famiglia:"accipitridae",
-		razza:"aquila arpia",
-		discendenza:"harpia harpyja",
-		numeroZampe:"2"
-	}
-
-	var animalArray = [];
-	animalArray.push(animal1, animal2, animal3);
-	console.log(animal1.nomeAnimale, animal2.nomeAnimale, animal3.nomeAnimale);
-	for (var i = 0; i < animalArray.length; i++) {
-		console.log(animalArray[i].nomeAnimale);
-	}
-
-   /* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
+	/* if (arrayNome[arrayNome.length-1] == "o" || arrayNome[arrayNome.length-1] == "O") {
 		elementNome.style.color = "lightblue";
 	} else if (arrayNome[arrayNome.length-1] == "a" || arrayNome[arrayNome.length-1] == "A") {
 		elementNome.style.color = "pink";
@@ -74,3 +43,46 @@ function myFunction() {
 for (i = 0; i < 20; i++) {
 	console.log("Ciao!!!!! :)" + i);
 }
+
+var animal1 = {
+	nomeAnimale:"anacleto" ,
+	famiglia:"tytonidae",
+	razza:"barbagianni",
+	discendenza:"tyto",
+	numeroZampe:"2",
+}
+
+var animal2 = {
+	nomeAnimale:"poldo",
+	famiglia:"strygidae",
+	razza:"gufo reale",
+	discendenza:"b.bulbo",
+	numeroZampe:"2",
+}
+
+var animal3 = {
+	nomeAnimale:"arpa",
+	famiglia:"accipitridae",
+	razza:"aquila arpia",
+	discendenza:"harpia harpyja",
+	numeroZampe:"2"
+}
+
+var animalArray = [];
+animalArray.push(animal1, animal2, animal3);
+console.log(animal1.nomeAnimale, animal2.nomeAnimale, animal3.nomeAnimale);
+for (var i = 0; i < animalArray.length; i++) {
+	console.log(animalArray[i].nomeAnimale);
+}
+
+var html = "";
+for (var k = 0; k < animalArray.length; k++) {
+	html += "<tr>"
+		html += "<td>" + animalArray[k].nomeAnimale + "</td>"
+		html += "<td>" + animalArray[k].famiglia + "</td>"
+		html += "<td>" + animalArray[k].razza + "</td>"
+		html += "<td>" + animalArray[k].discendenza + "</td>"
+		html += "<td>" + animalArray[k].numeroZampe + "</td>"
+	html += "</tr>"
+}
+document.getElementById("animalTable").innerHTML = html;

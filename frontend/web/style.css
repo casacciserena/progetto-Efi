@@ -1,4 +1,4 @@
-img { 
+img {
     width: 80%;
 }
 
@@ -14,7 +14,7 @@ button {
 #fraseCss {
 	display: none;
 }
-	
+
 #div1 {
     float: left;
 	width: 50%;
@@ -27,7 +27,7 @@ button {
 	text-align: right;
 }
 
-td, table {
+th, td, table {
 	color: pink;
 	border: 2px solid;
 	border-collapse: separate;
