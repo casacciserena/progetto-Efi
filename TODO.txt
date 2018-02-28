@@ -1,4 +1,5 @@
 DA FARE  
+-Stampare nelle colonne della tabella gli elementi contenuti negli oggetti creati associandoli alle giuste colonne
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
