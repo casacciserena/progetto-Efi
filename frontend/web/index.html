@@ -4,7 +4,7 @@
 		<!-- Caricamento file esterno CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 
-		<title>Title</title>
+		<title>Progetto-Efi</title>
 
 		<!-- Definizione CSS sulla pagina HTML-->
 		<!-- <style>
@@ -15,45 +15,53 @@
 	</head>
 
 	<body>
-		<!-- Definizione CSS direttamente sul tag interessato -->
-		<h1 style="color: red; text-align: center;">
-			Riordinare la propria vita con con un Click
-		</h1>
+		<div id="titleContainer">
+			<!-- Definizione CSS direttamente sul tag interessato -->
+			<h1 id="title"> <!--style="color: red; text-align: center;">-->
+				Riordinare la propria vita con con un Click
+			</h1>
+			<img id="titleImg" src="../images/gatto.gif">
+		</div>
+		
+		<div id="section">
+			<div id="cloud" onclick="myFunction()">
+				<div id="insertName">
+					<label for="name">Nome:</label>
+					<input id="name" placeholder="inserisci il tuo nome">
+				</div>
+				
+				<div id="clickMe">Click me!</div>
+
+				<div id="fraseCss">ciao<span id="nome"> </span> come va oggi?</div>
+				
+				<div id="bottom_c" class="borderCloud"></div>
+				<div id="right_c" class="borderCloud"></div>
+				<div id="left_c" class="borderCloud"></div>
+			</div>
+			<table id="table">
+				<thead>
+					<tr>
+						<th>nomeAnimale</th>
+						<th>Famiglia</th>
+						<th>Razza</th>
+						<th>Discendenza</th>
+						<th>numeroZampe</th>
+					</tr>
+				</thead>
+				<tbody id="animalTable">
+			
+				</tbody>
+			</table>
+		</div>
 
 		<!-- <img src=http://www.patronato.acli.it/wp-content/uploads/2016/10/ape_quota.jpg> -->
 	    <div id="div1">
-		   <img src="../images/ape_quota.jpg">
+			<img src="../images/ape.jpg">
 		</div>
 
 		<div id="div2">
-			<img src="../images/gatto-dorme-girasole.jpg">
+			<img src="../images/scoiattolo.jpg">
 		</div>
-
-		<div>
-			<button onclick="myFunction()">click me!</button>
-		</div>
-
-		<div>
-			<label for="name">Nome:</label>
-			<input id="name" placeholder="inserisci il tuo nome">
-		</div>
-
-		<div id="fraseCss">ciao<span id="nome"> </span> come va oggi?</div>
-
-	  <table>
-			<thaed>
-				<tr>
-					<th>nomeAnimale</th>
-					<th>Famiglia</th>
-					<th>Razza</th>
-					<th>Discendenza</th>
-					<th>numeroZampe</th>
-				</tr>
-			</thead>
-			<tbody id="animalTable">
-
-			</tbody>
-		</table>
 
 	</body>
 
