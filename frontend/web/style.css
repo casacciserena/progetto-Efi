@@ -33,3 +33,12 @@ th, td, table {
 	border-collapse: separate;
 	border-spacing: 10px;
 }
+
+th, td  {
+  color: violet;
+  text-align: center;
+ }
+
+table {
+    text-decoration: overline;
+}
