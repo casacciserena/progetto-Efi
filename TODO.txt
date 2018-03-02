@@ -1,5 +1,7 @@
 DA FARE  
--Stampare nelle colonne della tabella gli elementi contenuti negli oggetti creati associandoli alle giuste colonne
+-Vedere https://www.sitepoint.com/test-data-json-example/
+-Creare nella directory "progetto-Efi" un nuovo file e salvarlo come .json basandosi sulla struttura studiata	
+-Scaricare ed installare Postman (https://www.getpostman.com/apps)
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
@@ -30,3 +32,4 @@ COMPLETATI
 		console.log("nome di ogni animale")
 	}
 stampare in console il nome di ogni animale
+-Stampare nelle colonne della tabella gli elementi contenuti negli oggetti creati associandoli alle giuste colonne
