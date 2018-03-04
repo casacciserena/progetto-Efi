@@ -1,7 +1,6 @@
 package com.serena.animalproject.model.bean.response;
 
 import java.util.Collection;
-import java.util.List;
 
 import com.serena.animalproject.model.bean.AnimalBean;
 

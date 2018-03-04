@@ -58,6 +58,7 @@ public class AnimalServiceImpl implements AnimalService {
             animalBean.setAnimal_family(animal.getAnimalFamily());
             animalBean.setAnimal_race(animal.getAnimalRace());
             animalBean.setAnimal_descent(animal.getAnimalDescent());
+            animalBean.setAnimal_legs(animal.getAnimalLegs());
 
             animalBeanCollection.add(animalBean);
         }
