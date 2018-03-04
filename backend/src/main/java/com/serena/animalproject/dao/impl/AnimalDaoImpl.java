@@ -26,7 +26,6 @@ public class AnimalDaoImpl implements AnimalDao {
     @Transactional
     public Collection<Animal> getAnimals() {
         Criteria criteria = getSession().createCriteria(Animal.class);
-        //criteria.setFetchMode("collectionProgetto", FetchMode.JOIN);
         return (Collection<Animal>) criteria.list();
     }
 }
