@@ -41,6 +41,10 @@ public class Animal {
     @Column(name = "TE_DESCENT")
     private String animalDescent;
 
+    @Basic
+    @Column(name = "NU_LEGS")
+    private int animalLegs;
+
     /**
      * @return the animalId
      */
@@ -109,5 +113,19 @@ public class Animal {
      */
     public void setAnimalDescent(String animalDescent) {
         this.animalDescent = animalDescent;
+    }
+
+    /**
+     * @return the animalLegs
+     */
+    public int getAnimalLegs() {
+        return animalLegs;
+    }
+
+    /**
+     * @param animalLegs the animalLegs to set
+     */
+    public void setAnimalLegs(int animalLegs) {
+        this.animalLegs = animalLegs;
     }
 }
