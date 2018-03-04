@@ -9,6 +9,7 @@ public class AnimalBean implements Serializable {
     private String animal_family;
     private String animal_race;
     private String animal_descent;
+    private int animal_legs;
 
     public AnimalBean() {
 
@@ -84,6 +85,21 @@ public class AnimalBean implements Serializable {
         this.animal_descent = animal_descent;
     }
 
+    /**
+     * @return the animal_legs
+     */
+    public int getAnimal_legs() {
+        return animal_legs;
+    }
+
+    /**
+     * @param animal_legs the animal_legs to set
+     */
+    public void setAnimal_legs(int animal_legs) {
+        this.animal_legs = animal_legs;
+    }
+
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -93,6 +109,7 @@ public class AnimalBean implements Serializable {
                 .append(", animal_family=").append(animal_family)
                 .append(", animal_race=").append(animal_race)
                 .append(", animal_descent=").append(animal_descent)
+                .append(", animal_legs=").append(animal_legs)
                 .append("]");
         return builder.toString();
     }
