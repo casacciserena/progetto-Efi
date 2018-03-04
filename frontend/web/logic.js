@@ -10,6 +10,7 @@ var xhttp = new XMLHttpRequest();/*XMLHttpRequest è una dicitura obbligatoria p
 		 		html += "<td>" + animalArray[k].animal_family + "</td>"
 		 		html += "<td>" + animalArray[k].animal_race + "</td>"
 		 		html += "<td>" + animalArray[k].animal_descent + "</td>"
+				html += "<td>" + animalArray[k].animal_legs + "</td>"
 		 	html += "</tr>"
 		 }
 		 document.getElementById("animalTable").innerHTML = html;
