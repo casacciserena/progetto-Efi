@@ -1,7 +1,23 @@
-DA FARE  
--Vedere https://www.sitepoint.com/test-data-json-example/
--Creare nella directory "progetto-Efi" un nuovo file e salvarlo come .json basandosi sulla struttura studiata	
--Scaricare ed installare Postman (https://www.getpostman.com/apps)
+DA FARE
+-Creare una classe java allo stesso livello di "Animal.java" chiamandola "Owner.java"
+-Basandosi sul codice della classe "Animal.java", in "Owner.java" definire la nuova entità che verrà mappata automaticamente sul database con i seguenti campi:
+	OWNER_ID, TE_NAME, TE_SURNAME, NU_AGE, TE_SEX, NU_MOBILE_PHONE
+-Creare una classe java allo stesso livello di "AnimalBean.java" chiamandola "OwnerBean.java"
+-Basandosi sul codice della classe "AnimalBean.java", scrivere il codice di "OwnerBean.java"
+-Creare una classe java allo stesso livello di "AnimalBeanCollectionResponse.java" chiamandola "OwnerBeanCollectionResponse.java"
+-Basandosi sul codice della classe "AnimalBeanCollectionResponse.java", scrivere il codice di "OwnerBeanCollectionResponse.java"
+-Creare una classe java allo stesso livello di "AnimalDao.java" chiamandola "OwnerDao.java"
+-Basandosi sul codice della classe "AnimalDao.java", scrivere il codice di "OwnerDao.java"
+-Creare una classe java allo stesso livello di "AnimalDaoImpl.java" chiamandola "OwnerDaoImpl.java"
+-Basandosi sul codice della classe "AnimalDaoImpl.java", scrivere il codice di "OwnerDaoImpl.java"
+-Creare una classe java allo stesso livello di "AnimalService.java" chiamandola "OwnerService.java"
+-Basandosi sul codice della classe "AnimalService.java", scrivere il codice di "OwnerService.java"
+-Creare una classe java allo stesso livello di "AnimalServiceImpl.java" chiamandola "OwnerServiceImpl.java"
+-Basandosi sul codice della classe "AnimalServiceImpl.java", scrivere il codice di "OwnerServiceImpl.java"
+-Nella classe "RestController.java" definre il servizio di GET per recuperare dal database i dati degli "owner"
+	(Prendere spunto dal servizio di GET che riguarda gli animali)
+-Creare una nuova tabella nella pagina "index.html" che conterrà i dati degli "owner"
+-Tramite una chiamata Ajax, chiamare il backend e recuperare i dati degli owner per poi popolare la nuova tabella creata
 
 COMPLETATI
 -Creazione titolo in alto, centrale e di colore rosso
@@ -33,3 +49,4 @@ COMPLETATI
 	}
 stampare in console il nome di ogni animale
 -Stampare nelle colonne della tabella gli elementi contenuti negli oggetti creati associandoli alle giuste colonne
+-Scaricare ed installare Postman (https://www.getpostman.com/apps)
