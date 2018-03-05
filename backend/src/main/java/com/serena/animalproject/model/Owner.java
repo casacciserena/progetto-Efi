@@ -13,16 +13,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TBL_OWNER")
 @NamedQueries({
-	@NamedQuery(name = "getOwners", query = "" +
-		"SELECT o " +
-		"FROM Owner o " +
-		"ORDER BY o.ownerName"
-	),
+        @NamedQuery(name = "getOwners", query = "" +
+                "SELECT o " +
+                "FROM Owner o " +
+                "ORDER BY o.ownerName"
+        ),
 })
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "OWENERS_ID", nullable = false, updatable = false)
+    @Column(name = "OWNER_ID", nullable = false, updatable = false)
     private long ownerId;
 
     @Basic(optional = false)
@@ -46,14 +46,14 @@ public class Owner {
     private int ownerMobilePhone;
 
     /**
-     * @return the owenerId
+     * @return the ownerId
      */
     public long getOwnerId() {
         return ownerId;
     }
 
     /**
-     * @param owenerId the ownerId to set
+     * @param ownerId the ownerId to set
      */
     public void setOwnerId(long ownerId) {
         this.ownerId = ownerId;
@@ -62,14 +62,14 @@ public class Owner {
     /**
      * @return the ownerName
      */
-    public String getownerName() {
+    public String getOwnerName() {
         return ownerName;
     }
 
     /**
      * @param ownerName the ownerName to set
      */
-    public void setOwnerName(String animalName) {
+    public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
 
@@ -83,21 +83,21 @@ public class Owner {
     /**
      * @param ownerSurname the ownerSurname to set
      */
-    public void setOwnerSurnaame(String animalFamily) {
+    public void setOwnerSurname(String ownerSurname) {
         this.ownerSurname = ownerSurname;
     }
 
     /**
      * @return the ownerAge
      */
-    public String getOwnerAge() {
+    public int getOwnerAge() {
         return ownerAge;
     }
 
     /**
      * @param ownerAge the ownerAge to set
      */
-    public void setOwnerAge(String ownerAge) {
+    public void setOwnerAge(int ownerAge) {
         this.ownerAge = ownerAge;
     }
 
@@ -109,10 +109,10 @@ public class Owner {
     }
 
     /**
-     * @param animalDescent the ownerSex to set
+     * @param ownerSex the ownerSex to set
      */
-    public void setAnimalDescent(String ownerSex) {
-        this.animalDescent = ownerSex;
+    public void setOwnerSex(String ownerSex) {
+        this.ownerSex = ownerSex;
     }
 
     /**

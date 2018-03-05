@@ -1,4 +1,4 @@
-package com.serena.ownerproject.model.bean;
+package com.serena.animalproject.model.bean;
 
 import java.io.Serializable;
 
@@ -9,9 +9,9 @@ public class OwnerBean implements Serializable {
     private String owner_surname;
     private int owner_age;
     private String owner_sex;
-    private int owner_number_phone;
+    private int owner_mobile_phone;
 
-    public ownerBean() {
+    public OwnerBean() {
 
     }
 
@@ -39,7 +39,7 @@ public class OwnerBean implements Serializable {
     /**
      * @param owner_name the owner_name to set
      */
-    public void setOwnner_name(String owner_name) {
+    public void setOwner_name(String owner_name) {
         this.owner_name = owner_name;
     }
 
@@ -53,14 +53,14 @@ public class OwnerBean implements Serializable {
     /**
      * @param owner_surname the owner_surname to set
      */
-    public void setOwner_surname(int owner_surname) {
+    public void setOwner_surname(String owner_surname) {
         this.owner_surname = owner_surname;
     }
 
     /**
      * @return the owner_age
      */
-    public int getowner_age() {
+    public int getOwner_age() {
         return owner_age;
     }
 
@@ -86,17 +86,17 @@ public class OwnerBean implements Serializable {
     }
 
     /**
-     * @return the owner_number_phone
+     * @return the owner_mobile_phone
      */
-    public int getOwner_number_phone() {
-        return owner_number_phone;
+    public int getOwner_mobile_phone() {
+        return owner_mobile_phone;
     }
 
     /**
-     * @param owner_number_phone the owner_number_phone to set
+     * @param owner_mobile_phone the owner_mobile_phone to set
      */
-    public void setOwner_number_phone(int owner_number_phone) {
-        this.owner_number_phone = owener_number_phone;
+    public void setOwner_mobile_phone(int owner_mobile_phone) {
+        this.owner_mobile_phone = owner_mobile_phone;
     }
 
 
@@ -109,7 +109,7 @@ public class OwnerBean implements Serializable {
                 .append(", owner_surname=").append(owner_surname)
                 .append(", owner_age=").append(owner_age)
                 .append(", owner_sex=").append(owner_sex)
-                .append(", owner_number_phone=").append(owner_number_phone)
+                .append(", owner_mobile_phone=").append(owner_mobile_phone)
                 .append("]");
         return builder.toString();
     }

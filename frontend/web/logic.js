@@ -1,11 +1,16 @@
 var xhttp = new XMLHttpRequest();/*XMLHttpRequest è una dicitura obbligatoria per creare una variabile che utilizzi le funzionalità Ajax*/
+<<<<<<< HEAD
 xhttp.onreadystatechange = function() {
+=======
+	xhttp.onreadystatechange = function() {
+>>>>>>> 7c1ebf9a1dcd254c72b56d32c1ff598fa0a9de0e
 	if (this.readyState == 4 && this.status == 200) {
 		console.log(this.responseText);
 		var animalArray = JSON.parse(this.responseText).content
 		var html = "";
 		for (var k = 0; k < animalArray.length; k++) {
 			html += "<tr>"
+<<<<<<< HEAD
 		 		html += "<td>" + animalArray[k].animal_name + "</td>"
 		 		html += "<td>" + animalArray[k].animal_family + "</td>"
 		 		html += "<td>" + animalArray[k].animal_race + "</td>"
@@ -14,6 +19,16 @@ xhttp.onreadystatechange = function() {
 		 	html += "</tr>"
 		 }
 		 document.getElementById("animalTable").innerHTML = html;
+=======
+				html += "<td>" + animalArray[k].animal_name + "</td>"
+				html += "<td>" + animalArray[k].animal_family + "</td>"
+				html += "<td>" + animalArray[k].animal_race + "</td>"
+				html += "<td>" + animalArray[k].animal_descent + "</td>"
+				html += "<td>" + animalArray[k].animal_legs + "</td>"
+			html += "</tr>"
+		}
+	 document.getElementById("animalTable").innerHTML = html;
+>>>>>>> 7c1ebf9a1dcd254c72b56d32c1ff598fa0a9de0e
 	 }
 };
 xhttp.open("GET", "http://localhost:8080/api/animal", true);
