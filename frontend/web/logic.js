@@ -1,22 +1,23 @@
 var xhttp = new XMLHttpRequest();/*XMLHttpRequest è una dicitura obbligatoria per creare una variabile che utilizzi le funzionalità Ajax*/
 	xhttp.onreadystatechange = function() {
-	 if (this.readyState == 4 && this.status == 200) {
-		 console.log(this.responseText);
-		 var animalArray = JSON.parse(this.responseText).content
-		 var html = "";
-		 for (var k = 0; k < animalArray.length; k++) {
-		  	html += "<tr>"
-		 		html += "<td>" + animalArray[k].animal_name + "</td>"
-		 		html += "<td>" + animalArray[k].animal_family + "</td>"
-		 		html += "<td>" + animalArray[k].animal_race + "</td>"
-		 		html += "<td>" + animalArray[k].animal_descent + "</td>"
-		 	html += "</tr>"
-		 }
-		 document.getElementById("animalTable").innerHTML = html;
+	if (this.readyState == 4 && this.status == 200) {
+		console.log(this.responseText);
+		var animalArray = JSON.parse(this.responseText).content
+		var html = "";
+		for (var k = 0; k < animalArray.length; k++) {
+			html += "<tr>"
+				html += "<td>" + animalArray[k].animal_name + "</td>"
+				html += "<td>" + animalArray[k].animal_family + "</td>"
+				html += "<td>" + animalArray[k].animal_race + "</td>"
+				html += "<td>" + animalArray[k].animal_descent + "</td>"
+				html += "<td>" + animalArray[k].animal_legs + "</td>"
+			html += "</tr>"
+		}
+	 document.getElementById("animalTable").innerHTML = html;
 	 }
- };
- xhttp.open("GET", "http://localhost:8080/api/animal", true);
- xhttp.send();
+};
+xhttp.open("GET", "http://localhost:8080/api/animal", true);
+xhttp.send();
 
 function myFunction() {
 	console.log("Ciao Serena, come va oggi?");
