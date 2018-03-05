@@ -39,10 +39,10 @@ function myFunction() {
 
 	switch(arrayNome[arrayNome.length-1]) {
 	case "o":
-	  elementNome.style.color = "lightblue";
+	  elementNome.style.color = "darkviolet";
 	  break;
 	case "O":
-	  elementNome.style.color = "lightblue";
+	  elementNome.style.color = "ldarkviolet";
 	  break;
 	case "a":
 	  elementNome.style.color = "pink";

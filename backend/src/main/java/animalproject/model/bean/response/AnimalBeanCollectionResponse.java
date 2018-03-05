@@ -1,4 +1,4 @@
-package com.serena.animalproject.model.bean.response;
+package com.serena.animalproject.model.bean.response;package com.serena.animalproject.model.bean.response;
 
 import java.util.Collection;
 
