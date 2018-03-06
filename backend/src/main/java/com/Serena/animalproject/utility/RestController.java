@@ -21,3 +21,14 @@ public class RestController  {
         return animalService.getAnimals();
     }
 }
+public class RestController  {
+
+    @Autowired
+    private OwnerService ownerService;
+
+    @RequestMapping(value = "/owner", method = RequestMethod.GET)
+    @ResponseBody
+    public OwnerBeanCollectionResponse ownerBeanCollectionResponse() {
+        return ownerService.getOwners();
+    }
+}
