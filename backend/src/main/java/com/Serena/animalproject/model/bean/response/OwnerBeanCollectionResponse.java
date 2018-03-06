@@ -1,8 +1,8 @@
-package com.serena.ownerproject.model.bean.response;
+package com.serena.animalproject.model.bean.response;
 
 import java.util.Collection;
 
-import com.serena.ownerproject.model.bean.ownerBean;
+import com.serena.animalproject.model.bean.OwnerBean;
 
 public class OwnerBeanCollectionResponse {
 
