@@ -19,7 +19,28 @@ if (this.readyState == 4 && this.status == 200) {
 xhttp.open("GET", "http://localhost:8080/api/animal", true);
 xhttp.send();
 
+var xhttp2 = new XMLHttRrequest2 ();
+xhttp.onreadystetechange == function() 
 function myFunction() {
+	if (this.readyState == 4 && this.status == 200) {
+	console.log(this.responseText);
+	var ownerArray = JSON.parse(this.responseText).content
+	var html = "";
+	for (var k = 0; k < ownerArray.length; k++) {
+		html += "<tr>"
+			html += "<td>" + ownerArray[k].owner_name + "</td>"
+		 	html += "<td>" + ownerArray[k].owner_surname + "</td>"
+		 	html += "<td>" + ownerArray[k].owner_sex + "</td>"
+		 	html += "<td>" + ownerArray[k].owner_age + "</td>"
+			html += "<td>" + ownerArray[k].owner_number_phone + "</td>"
+		 	html += "</tr>"
+		}
+		document.getElementById("ownerTable").innerHTML = html;
+	}
+};
+xhttp.open("GET", "http://localhost:8080/api/owner", true);
+xhttp.send();
+
 	console.log("Ciao Serena, come va oggi?");
 
 	var nome = document.getElementById("name").value;
