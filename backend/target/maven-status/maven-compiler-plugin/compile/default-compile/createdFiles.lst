@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\serena\animalproject\model\Owner.class
 com\serena\animalproject\utility\JPAUtility.class
 com\serena\animalproject\model\bean\response\AnimalBeanCollectionResponse.class
@@ -13,3 +14,5 @@ com\serena\animalproject\model\bean\response\AnimalBeanResponse.class
 com\serena\animalproject\Application.class
 com\serena\animalproject\dao\impl\AnimalDaoImpl.class
 com\serena\animalproject\utility\RestController.class
+=======
+>>>>>>> 4c4705678f5fab7eff2b6d4941292ad593bf3d0b
