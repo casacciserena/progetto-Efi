@@ -13,11 +13,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TBL_ANIMAL")
 @NamedQueries({
-	@NamedQuery(name = "getAnimals", query = "" +
-		"SELECT a " +
-		"FROM Animal a " +
-		"ORDER BY a.animalName"
-	),
+	    @NamedQuery(name = "getAnimals", query = "" +
+		        "SELECT a " +
+		        "FROM Animal a " +
+		        "ORDER BY a.animalName"
+	    ),
+        @NamedQuery(name = "getAnimal", query = "" +
+                "SELECT a " +
+                "FROM Animal a " +
+                "WHERE a.animalId = :animalId"
+        ),
 })
 public class Animal {
     @Id

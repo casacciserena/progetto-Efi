@@ -6,4 +6,5 @@ import java.util.Collection;
 
 public interface AnimalDao {
     Collection<Animal> getAnimals();
+    Animal getAnimal(long animalId);
 }

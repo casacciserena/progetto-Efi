@@ -31,7 +31,7 @@ public class AnimalBeanCollectionResponse {
         StringBuilder builder = new StringBuilder();
         builder.append(this.getClass().getSimpleName());
         for (AnimalBean animalBean : content) {
-            builder.append("[ content=").append(animalBean).append("]");
+            builder.append("[content = ").append(animalBean).append("]");
         }
         return builder.toString();
     }

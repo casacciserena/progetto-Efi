@@ -14,7 +14,7 @@ DA FARE
 -Basandosi sul codice della classe "AnimalService.java", scrivere il codice di "OwnerService.java"
 -Creare una classe java allo stesso livello di "AnimalServiceImpl.java" chiamandola "OwnerServiceImpl.java"
 -Basandosi sul codice della classe "AnimalServiceImpl.java", scrivere il codice di "OwnerServiceImpl.java"
--Nella classe "RestController.java" definre il servizio di GET per recuperare dal database i dati degli "owner"
+-Nella classe "RestController.java" definire il servizio di GET per recuperare dal database i dati degli "owner"
 	(Prendere spunto dal servizio di GET che riguarda gli animali)
 -Creare una nuova tabella nella pagina "index.html" che conterrà i dati degli "owner"
 -Tramite una chiamata Ajax, chiamare il backend e recuperare i dati degli owner per poi popolare la nuova tabella creata

@@ -31,7 +31,7 @@ public class OwnerBeanCollectionResponse {
         StringBuilder builder = new StringBuilder();
         builder.append(this.getClass().getSimpleName());
         for (OwnerBean ownerBean : content) {
-            builder.append("[ content=").append(ownerBean).append("]");
+            builder.append("[content = ").append(ownerBean).append("]");
         }
         return builder.toString();
     }
