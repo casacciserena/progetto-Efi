@@ -2,8 +2,10 @@ package com.serena.animalproject.utility;
 
 import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse;
 import com.serena.animalproject.model.bean.response.AnimalBeanResponse;
+import com.serena.animalproject.model.bean.response.OwnerBeanCollectionResponse;
 import com.serena.animalproject.service.AnimalService;
 
+import com.serena.animalproject.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,11 @@ public class RestController  {
 
     @Autowired
     private AnimalService animalService;
+
+    @Autowired
+    private OwnerService ownerService;
+
+    //------- ANIMAL ------//
 
     @RequestMapping(value = "/animal", method = RequestMethod.GET)
     @ResponseBody
@@ -66,11 +73,8 @@ public class RestController  {
 //        }
 //        return "Cliente non inserito";
 //    }
-}
-public class RestController  {
 
-    @Autowired
-    private OwnerService ownerService;
+    //------- OWNER -------//
 
     @RequestMapping(value = "/owner", method = RequestMethod.GET)
     @ResponseBody
@@ -78,3 +82,6 @@ public class RestController  {
         return ownerService.getOwners();
     }
 }
+
+
+

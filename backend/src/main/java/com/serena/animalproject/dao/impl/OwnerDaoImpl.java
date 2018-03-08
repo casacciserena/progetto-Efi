@@ -1,8 +1,10 @@
 package com.serena.animalproject.dao.impl;
 
 import com.serena.animalproject.dao.AnimalDao;
+import com.serena.animalproject.dao.OwnerDao;
 import com.serena.animalproject.model.Animal;
 
+import com.serena.animalproject.model.Owner;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,8 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
-@Repository("animalDao")
-public class OwnerDaoImpl implements owerDao {
+@Repository("ownerDao")
+public class OwnerDaoImpl implements OwnerDao {
 
     @Autowired
     private SessionFactory sessionFactory;

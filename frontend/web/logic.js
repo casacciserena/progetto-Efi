@@ -1,5 +1,5 @@
-var xhttp = new XMLHttpRequest();/*XMLHttpRequest è una dicitura obbligatoria per creare una variabile che utilizzi le funzionalità Ajax*/
-xhttp.onreadystatechange = function() {
+var xhttpAnimal = new XMLHttpRequest();/*XMLHttpRequest è una dicitura obbligatoria per creare una variabile che utilizzi le funzionalità Ajax*/
+xhttpAnimal.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
 		console.log(this.responseText);
 		var animalArray = JSON.parse(this.responseText).content
@@ -16,31 +16,31 @@ xhttp.onreadystatechange = function() {
 		document.getElementById("animalTable").innerHTML = html;
 	}
 };
-xhttp.open("GET", "http://localhost:8080/api/animal", true);
-xhttp.send();
+xhttpAnimal.open("GET", "http://localhost:8080/api/animal", true);
+xhttpAnimal.send();
 
-var xhttp2 = new XMLHttRrequest2 ();
-xhttp.onreadystetechange == function() 
-function myFunction() {
+var xhttpOwner = new XMLHttpRequest ();
+xhttpOwner.onreadystetechange == function() {
 	if (this.readyState == 4 && this.status == 200) {
-	console.log(this.responseText);
-	var ownerArray = JSON.parse(this.responseText).content
-	var html = "";
-	for (var k = 0; k < ownerArray.length; k++) {
-		html += "<tr>"
-			html += "<td>" + ownerArray[k].owner_name + "</td>"
-		 	html += "<td>" + ownerArray[k].owner_surname + "</td>"
-		 	html += "<td>" + ownerArray[k].owner_sex + "</td>"
-		 	html += "<td>" + ownerArray[k].owner_age + "</td>"
-			html += "<td>" + ownerArray[k].owner_number_phone + "</td>"
-		 	html += "</tr>"
+		console.log(this.responseText);
+		var ownerArray = JSON.parse(this.responseText).content
+		var html = "";
+		for (var j = 0; j < ownerArray.length; j++) {
+			html += "<tr>"
+				html += "<td>" + ownerArray[j].owner_name + "</td>"
+				html += "<td>" + ownerArray[j].owner_surname + "</td>"
+				html += "<td>" + ownerArray[j].owner_sex + "</td>"
+				html += "<td>" + ownerArray[j].owner_age + "</td>"
+				html += "<td>" + ownerArray[j].owner_mobile_phone + "</td>"
+			html += "</tr>"
 		}
 		document.getElementById("ownerTable").innerHTML = html;
 	}
 };
-xhttp.open("GET", "http://localhost:8080/api/owner", true);
-xhttp.send();
+xhttpOwner.open("GET", "http://localhost:8080/api/owner", true);
+xhttpOwner.send();
 
+function myFunction() {
 	console.log("Ciao Serena, come va oggi?");
 
 	var nome = document.getElementById("name").value;
@@ -63,7 +63,7 @@ xhttp.send();
 	  elementNome.style.color = "darkviolet";
 	  break;
 	case "O":
-	  elementNome.style.color = "ldarkviolet";
+	  elementNome.style.color = "darkviolet";
 	  break;
 	case "a":
 	  elementNome.style.color = "pink";

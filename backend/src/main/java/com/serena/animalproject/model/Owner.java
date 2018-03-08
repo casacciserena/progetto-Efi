@@ -42,8 +42,8 @@ public class Owner {
     private String ownerSex;
 
     @Basic
-    @Column(name = "NU_MOBILE_PHONE")
-    private int ownerMobilePhone;
+    @Column(name = "TE_MOBILE_PHONE")
+    private String ownerMobilePhone;
 
     /**
      * @return the ownerId
@@ -118,14 +118,14 @@ public class Owner {
     /**
      * @return the ownerMobilePhone
      */
-    public int getOwnerMobilePhone() {
+    public String getOwnerMobilePhone() {
         return ownerMobilePhone;
     }
 
     /**
      * @param ownerMobilePhone the ownerMobilePhone to set
      */
-    public void setOwnerMobilePhone(int ownerMobilePhone) {
+    public void setOwnerMobilePhone(String ownerMobilePhone) {
         this.ownerMobilePhone = ownerMobilePhone;
     }
 }

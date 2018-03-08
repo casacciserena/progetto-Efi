@@ -9,7 +9,7 @@ public class OwnerBean implements Serializable {
     private String owner_surname;
     private int owner_age;
     private String owner_sex;
-    private int owner_mobile_phone;
+    private String owner_mobile_phone;
 
     public OwnerBean() {
 
@@ -88,14 +88,14 @@ public class OwnerBean implements Serializable {
     /**
      * @return the owner_mobile_phone
      */
-    public int getOwner_mobile_phone() {
+    public String getOwner_mobile_phone() {
         return owner_mobile_phone;
     }
 
     /**
      * @param owner_mobile_phone the owner_mobile_phone to set
      */
-    public void setOwner_mobile_phone(int owner_mobile_phone) {
+    public void setOwner_mobile_phone(String owner_mobile_phone) {
         this.owner_mobile_phone = owner_mobile_phone;
     }
 
