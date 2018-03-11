@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import java.util.Objects;
 
 @Entity
 @Table(name = "TBL_ANIMAL")
@@ -132,5 +133,17 @@ public class Animal {
      */
     public void setAnimalLegs(int animalLegs) {
         this.animalLegs = animalLegs;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "animalId=" + animalId +
+                ", animalName='" + animalName + '\'' +
+                ", animalFamily='" + animalFamily + '\'' +
+                ", animalRace='" + animalRace + '\'' +
+                ", animalDescent='" + animalDescent + '\'' +
+                ", animalLegs=" + animalLegs +
+                '}';
     }
 }

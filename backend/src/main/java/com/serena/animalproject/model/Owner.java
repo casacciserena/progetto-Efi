@@ -128,4 +128,16 @@ public class Owner {
     public void setOwnerMobilePhone(String ownerMobilePhone) {
         this.ownerMobilePhone = ownerMobilePhone;
     }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ownerId=" + ownerId +
+                ", ownerName='" + ownerName + '\'' +
+                ", ownerSurname='" + ownerSurname + '\'' +
+                ", ownerAge=" + ownerAge +
+                ", ownerSex='" + ownerSex + '\'' +
+                ", ownerMobilePhone='" + ownerMobilePhone + '\'' +
+                '}';
+    }
 }

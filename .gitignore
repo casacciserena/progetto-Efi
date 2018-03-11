@@ -1,8 +1,8 @@
-.idea
-lib
-backend/.idea
-backend/out
-backend/target
+.idea/
+lib/
+backend/.idea/
+backend/out/
+backend/target/
 backend/backend.iml
 backend/src/main/.idea
 backend/src/main/main.iml

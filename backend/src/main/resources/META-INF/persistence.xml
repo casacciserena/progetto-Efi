@@ -9,7 +9,7 @@
             <!--org.eclipse.persistence.jpa.PersistenceProvider-->
         <!--</provider>-->
         <provider>
-            org.hibernate.ejb.HibernatePersistence
+            org.hibernate.jpa.HibernatePersistenceProvider
         </provider>
 
         <class>

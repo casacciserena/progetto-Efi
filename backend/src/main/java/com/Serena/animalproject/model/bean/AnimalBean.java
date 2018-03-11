@@ -99,7 +99,6 @@ public class AnimalBean implements Serializable {
         this.animal_legs = animal_legs;
     }
 
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

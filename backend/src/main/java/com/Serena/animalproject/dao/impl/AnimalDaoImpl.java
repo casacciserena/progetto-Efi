@@ -37,7 +37,6 @@ public class AnimalDaoImpl implements AnimalDao {
         return (Animal) entityManager.createNamedQuery("getAnimal", Animal.class)
                 .setParameter("animalId", animalId)
                 .getSingleResult();
-//        Display display = (Display)entityManager.find(Display.class, displayId);
     }
 
 //    @Transactional
