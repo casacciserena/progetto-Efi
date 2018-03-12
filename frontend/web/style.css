@@ -19,16 +19,15 @@ body {
 	position: relative;
 }
 
-#animal_table {
-	position: absolute;
-	left: 50%;
-	top: 25%;
+#animal_table, #owner_table {
+	float: left;
+	margin: 20px;
 }
 
 #insertName {
     position: absolute;
     top: 50%;
-    left: 17%;
+    left: 11%;
     z-index: 2;
 }
 
@@ -132,4 +131,5 @@ th, td  {
 
 table {
     text-decoration: overline;
+	text-align: center;
 }

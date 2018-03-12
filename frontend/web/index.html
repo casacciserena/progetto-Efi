@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<!-- Caricamento file esterno CSS -->
+	<body>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 
 		<title>Progetto-Efi</title>
@@ -14,7 +15,6 @@
 		</style> -->
 	</head>
 
-	<body>
 		<div id="titleContainer">
 			<!-- Definizione CSS direttamente sul tag interessato -->
 			<h1 id="title"> <!--style="color: red; text-align: center;">-->
@@ -24,61 +24,65 @@
 		</div>
 
 		<div id="section">
-			<div id="cloud" onclick="myFunction()">
+			<div id="cloudContainer">
 				<div id="insertName">
 					<label for="name">Nome:</label>
 					<input id="name" placeholder="inserisci il tuo nome">
 				</div>
+				<div id="cloud" onclick="myFunction()">
+					<div id="clickMe">Click me!</div>
 
-				<div id="clickMe">Click me!</div>
+					<div id="fraseCss">ciao<span id="nome"></span> come va oggi?</div>
 
-				<div id="fraseCss">ciao<span id="nome"> </span> come va oggi?</div>
-
-				<div id="bottom_c" class="borderCloud"></div>
-				<div id="right_c" class="borderCloud"></div>
-				<div id="left_c" class="borderCloud"></div>
+					<div id="bottom_c" class="borderCloud"></div>
+					<div id="right_c" class="borderCloud"></div>
+					<div id="left_c" class="borderCloud"></div>
+				</div>
 			</div>
 			
-			<table id="animal_table">
-				<thead>
-					<tr>
-						<th>nomeAnimale</th>
-						<th>Famiglia</th>
-						<th>Razza</th>
-						<th>Discendenza</th>
-						<th>numeroZampe</th>
-					</tr>
-				</thead>
-				<tbody id="animalTable">
+			<div id="tableContainer">
+				<table id="animal_table">
+					<thead>
+						<tr>
+							<th>nomeAnimale</th>
+							<th>Famiglia</th>
+							<th>Razza</th>
+							<th>Discendenza</th>
+							<th>numeroZampe</th>
+						</tr>
+					</thead>
+					<tbody id="animalTable">
 
-				</tbody>
-			</table>
+					</tbody>
+				</table>
 		 
-			<table id="owner_table">
-		        <thead>
-	                 <tr>
-				        <th>nome</th>
-                        <th>cognome</th>
-                        <th>sesso</th>
-                        <th>età</th>
-                        <th>numeroCellulare</th>
-                    </th>
-                </thead>
-         	    <tbody id="ownerTable">
+				<table id="owner_table">
+					<thead>
+						<tr>
+							<th>nome</th>
+							<th>cognome</th>
+							<th>sesso</th>
+							<th>età</th>
+							<th>numeroCellulare</th>
+						</th>
+					</thead>
+					<tbody id="ownerTable">
 
-                </tbody>
-            </table>				
+					</tbody>
+				</table>
+			</div>
+
+			<div id="imageContainer">
+				<!-- <img src=http://www.patronato.acli.it/wp-content/uploads/2016/10/ape_quota.jpg> -->
+				<div id="div1">
+					<img src="../images/ape.png">
+				</div>
+
+				<div id="div2">
+					<img src="../images/scoiattolo.png">
+				</div>
+			</div>
 		</div>
-
-		<!-- <img src=http://www.patronato.acli.it/wp-content/uploads/2016/10/ape_quota.jpg> -->
-	    <div id="div1">
-			<img src="../images/ape.png">
-		</div>
-
-		<div id="div2">
-			<img src="../images/scoiattolo.png">
-		</div>
-
 	</body>
 
 	<script src="logic.js" type="text/javascript"></script>
