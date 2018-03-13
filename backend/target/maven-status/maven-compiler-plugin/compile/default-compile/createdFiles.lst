@@ -1,11 +1,12 @@
-<<<<<<< HEAD
 com\serena\animalproject\model\Owner.class
+com\serena\animalproject\dao\impl\OwnerDaoImpl.class
 com\serena\animalproject\utility\JPAUtility.class
 com\serena\animalproject\model\bean\response\AnimalBeanCollectionResponse.class
 com\serena\animalproject\dao\AnimalDao.class
 com\serena\animalproject\model\bean\AnimalBean.class
 com\serena\animalproject\utility\DBUtility.class
 com\serena\animalproject\model\bean\OwnerBean.class
+com\serena\animalproject\service\impl\OwnerServiceImpl.class
 com\serena\animalproject\service\AnimalService.class
 com\serena\animalproject\model\Animal.class
 com\serena\animalproject\service\impl\AnimalServiceImpl.class
@@ -13,6 +14,6 @@ com\serena\animalproject\model\bean\response\OwnerBeanCollectionResponse.class
 com\serena\animalproject\model\bean\response\AnimalBeanResponse.class
 com\serena\animalproject\Application.class
 com\serena\animalproject\dao\impl\AnimalDaoImpl.class
+com\serena\animalproject\dao\OwnerDao.class
+com\serena\animalproject\service\OwnerService.class
 com\serena\animalproject\utility\RestController.class
-=======
->>>>>>> 4c4705678f5fab7eff2b6d4941292ad593bf3d0b

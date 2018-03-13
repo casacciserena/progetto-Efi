@@ -1,2 +1,0 @@
--To run the backend application
-"mvn package && java -jar target/backend-1.0.jar"

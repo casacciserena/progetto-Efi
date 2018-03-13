@@ -1,17 +1,14 @@
 package com.serena.animalproject.service.impl;
 
-import com.serena.animalproject.model.Animal;
 import com.serena.animalproject.model.Owner;
-import com.serena.animalproject.model.bean.AnimalBean;
 import com.serena.animalproject.model.bean.OwnerBean;
-import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse;
 import com.serena.animalproject.model.bean.response.OwnerBeanCollectionResponse;
-import com.serena.animalproject.service.AnimalService;
-
 import com.serena.animalproject.service.OwnerService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.transaction.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collection;

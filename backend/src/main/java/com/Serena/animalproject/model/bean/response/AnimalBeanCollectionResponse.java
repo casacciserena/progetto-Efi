@@ -1,9 +1,8 @@
 package com.serena.animalproject.model.bean.response;
 
-import java.util.Collection;
-
-import com.serena.animalproject.model.Animal;
 import com.serena.animalproject.model.bean.AnimalBean;
+
+import java.util.Collection;
 
 public class AnimalBeanCollectionResponse {
 
