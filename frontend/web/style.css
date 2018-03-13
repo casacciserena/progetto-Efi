@@ -26,13 +26,8 @@ body {
 
 #insertName {
     position: absolute;
-<<<<<<< HEAD
-    top: 50%;
-    left: 11%;
-=======
     top: 35%;
     left: 10%;
->>>>>>> 433f70de83527903f8063ab196f73ff15e8462bc
     z-index: 2;
 }
 
