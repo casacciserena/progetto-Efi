@@ -1,14 +1,6 @@
 package com.serena.animalproject.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TBL_ANIMAL")
@@ -132,5 +124,17 @@ public class Animal {
      */
     public void setAnimalLegs(int animalLegs) {
         this.animalLegs = animalLegs;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "animalId=" + animalId +
+                ", animalName='" + animalName + '\'' +
+                ", animalFamily='" + animalFamily + '\'' +
+                ", animalRace='" + animalRace + '\'' +
+                ", animalDescent='" + animalDescent + '\'' +
+                ", animalLegs=" + animalLegs +
+                '}';
     }
 }

@@ -7,11 +7,11 @@ public class AnimalBeanResponse {
 	private AnimalBean content;
 
 	public AnimalBeanResponse() {
-		
+
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the content
 	 */
 	public AnimalBean getContent() {
@@ -19,7 +19,7 @@ public class AnimalBeanResponse {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param content the content to set
 	 */
 	public void setContent(AnimalBean content) {

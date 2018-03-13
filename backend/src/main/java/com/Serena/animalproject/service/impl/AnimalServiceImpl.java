@@ -8,15 +8,12 @@ import com.serena.animalproject.service.AnimalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import javax.websocket.server.PathParam;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 
 @Service("animalService")
 public class AnimalServiceImpl implements AnimalService {
@@ -36,11 +33,11 @@ public class AnimalServiceImpl implements AnimalService {
             System.out.println("No result founds in table TBL_ANIMAL");
         }
 
-        Collection<AnimalBean> animalBeanCollectionResponse = createAnimalBeanCollectionResponse(animalCollection);
-        System.out.println("animalBeanCollectionResponse = " + animalBeanCollectionResponse);
+        Collection<AnimalBean> animalBeanCollection = createAnimalBeanCollection(animalCollection);
+        System.out.println("animalBeanCollection = " + animalBeanCollection);
 
         AnimalBeanCollectionResponse response = new AnimalBeanCollectionResponse();
-        response.setContent(animalBeanCollectionResponse);
+        response.setContent(animalBeanCollection);
         System.out.println("END");
         return response;
     }
@@ -208,36 +205,11 @@ public class AnimalServiceImpl implements AnimalService {
      * @param animalCollection
      * @return
      */
-    private Collection<AnimalBean> createAnimalBeanCollectionResponse(Collection<Animal> animalCollection) {
+    private Collection<AnimalBean> createAnimalBeanCollection(Collection<Animal> animalCollection) {
         Collection<AnimalBean> animalBeanCollection = new ArrayList<AnimalBean>();
         if (animalCollection ==  null) {
             return animalBeanCollection;
         }
-
-//        AnimalBean animalBean = null;
-//        Iterator iterator = animalCollection.iterator();
-//        while(iterator.hasNext()) {
-//            Animal[] animal = (Animal[]) iterator.next();
-//            animalBean = new AnimalBean();
-//            animalBean.setAnimal_id(animal.getAnimalId());
-//            animalBean.setAnimal_name(animal.getAnimalName());
-//            animalBean.setAnimal_family(animal.getAnimalFamily());
-//            animalBean.setAnimal_race(animal.getAnimalRace());
-//            animalBean.setAnimal_descent(animal.getAnimalDescent());
-//            animalBean.setAnimal_legs(animal.getAnimalLegs());
-//
-//            animalBeanCollection.add(animalBean);
-//        }
-
-//        List<Object> result = (List<Object>) LoadSource.list();
-//        Iterator itr = result.iterator();
-//        while(itr.hasNext()){
-//            Object[] obj = (Object[]) itr.next();
-//            //now you have one array of Object for each row
-//            String client = String.valueOf(obj[0]); // don't know the type of column CLIENT assuming String
-//            Integer service = Integer.parseInt(String.valueOf(obj[1])); //SERVICE assumed as int
-//            //same way for all obj[2], obj[3], obj[4]
-//        }
 
         AnimalBean animalBean = null;
         for(Animal animal : animalCollection) {

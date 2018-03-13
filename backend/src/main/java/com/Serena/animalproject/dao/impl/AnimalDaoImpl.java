@@ -2,16 +2,13 @@ package com.serena.animalproject.dao.impl;
 
 import com.serena.animalproject.dao.AnimalDao;
 import com.serena.animalproject.model.Animal;
-
 import com.serena.animalproject.utility.JPAUtility;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import java.util.Collection;
 
 @Repository("animalDao")
@@ -37,7 +34,6 @@ public class AnimalDaoImpl implements AnimalDao {
         return (Animal) entityManager.createNamedQuery("getAnimal", Animal.class)
                 .setParameter("animalId", animalId)
                 .getSingleResult();
-//        Display display = (Display)entityManager.find(Display.class, displayId);
     }
 
 //    @Transactional

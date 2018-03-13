@@ -99,7 +99,6 @@ public class OwnerBean implements Serializable {
         this.owner_mobile_phone = owner_mobile_phone;
     }
 
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

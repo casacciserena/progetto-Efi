@@ -1,14 +1,6 @@
 package com.serena.animalproject.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TBL_OWNER")
@@ -127,5 +119,17 @@ public class Owner {
      */
     public void setOwnerMobilePhone(String ownerMobilePhone) {
         this.ownerMobilePhone = ownerMobilePhone;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "ownerId=" + ownerId +
+                ", ownerName='" + ownerName + '\'' +
+                ", ownerSurname='" + ownerSurname + '\'' +
+                ", ownerAge=" + ownerAge +
+                ", ownerSex='" + ownerSex + '\'' +
+                ", ownerMobilePhone='" + ownerMobilePhone + '\'' +
+                '}';
     }
 }

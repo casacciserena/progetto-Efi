@@ -4,8 +4,8 @@ import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse
 import com.serena.animalproject.model.bean.response.AnimalBeanResponse;
 import com.serena.animalproject.model.bean.response.OwnerBeanCollectionResponse;
 import com.serena.animalproject.service.AnimalService;
-
 import com.serena.animalproject.service.OwnerService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
