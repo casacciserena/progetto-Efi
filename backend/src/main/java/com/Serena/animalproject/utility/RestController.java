@@ -1,5 +1,6 @@
 package com.serena.animalproject.utility;
 
+import com.serena.animalproject.model.bean.AnimalBean;
 import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse;
 import com.serena.animalproject.model.bean.response.AnimalBeanResponse;
 import com.serena.animalproject.model.bean.response.OwnerBeanCollectionResponse;
@@ -7,10 +8,7 @@ import com.serena.animalproject.service.AnimalService;
 import com.serena.animalproject.service.OwnerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api")
@@ -36,31 +34,11 @@ public class RestController  {
         return animalService.getAnimal(animalId);
     }
 
-//    //cancella una riga dalla tabella CLIENTE con id selezionato
-//    @RequestMapping(value = "/cliente/{id}", method = RequestMethod.DELETE)
-//    @ResponseBody
-//    public String deleteCliente(@PathVariable(value="id") int id) {
-//        if (clienteService.deleteCliente(id)) {
-//            return "Cliente cancellato";
-//        }
-//        else {
-//            return "Cliente non cancellato";
-//        }
-//    }
-
-//    //modifica il campo nomeCliente nella tabella CLIENTE
-//    //selezionando l'oggetto attraverso l'id e inserendo il
-//    //nuovo nome con cui sostituirlo
-//    @RequestMapping(value = "/cambiaNomeCliente", method = RequestMethod.POST)
-//    @ResponseBody
-//    public String changeClienteName(@RequestParam(value="id") int id, @RequestParam(value="newClienteName") String newName) {
-//        if (clienteService.changeClienteName(id, newName)) {
-//            return "{\"status\" :\"ok\"}";
-//        }
-//        else {
-//            return "{\"status\" :\" not ok\"}";
-//        }
-//    }
+    @RequestMapping(value = "/animal/{animalId}", method = RequestMethod.PUT, consumes = "application/json")
+    @ResponseBody
+    public String response(@PathVariable(value = "animalId") long animalId, @RequestBody AnimalBean animalBean) {
+        return animalService.updateAnimal(animalId, animalBean);
+    }
 
 //    //permette di aggiungere una nuova riga alla tabella CLIENTE inserendo una stringa con il nome
 //    //l'id viene generato automaticamente
@@ -72,6 +50,18 @@ public class RestController  {
 //            return "Cliente inserito";
 //        }
 //        return "Cliente non inserito";
+//    }
+
+//    //cancella una riga dalla tabella CLIENTE con id selezionato
+//    @RequestMapping(value = "/cliente/{id}", method = RequestMethod.DELETE)
+//    @ResponseBody
+//    public String deleteCliente(@PathVariable(value="id") int id) {
+//        if (clienteService.deleteCliente(id)) {
+//            return "Cliente cancellato";
+//        }
+//        else {
+//            return "Cliente non cancellato";
+//        }
 //    }
 
     //------- OWNER -------//

@@ -36,6 +36,19 @@ public class AnimalDaoImpl implements AnimalDao {
                 .getSingleResult();
     }
 
+    @Transactional
+    public String updateAnimal(Animal animalFromDB) {
+        String response;
+        try {
+            entityManager.merge(animalFromDB);
+            entityManager.flush();
+            response = "SUCCESS";
+        } catch(Exception exception) {
+            response = "FAILED";
+        }
+        return response;
+    }
+
 //    @Transactional
 //    public boolean newClienteName(Cliente c, String newName) {
 //        boolean hasErrors = false;

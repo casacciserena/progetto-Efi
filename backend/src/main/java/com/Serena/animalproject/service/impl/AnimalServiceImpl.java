@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import javax.websocket.server.PathParam;
+import javax.xml.ws.Response;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -63,62 +64,34 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
-//    @PUT
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Path("/{displayId}")
-//    public Response update(@HeaderParam(HttpHeaders.ACCEPT_LANGUAGE) String accept_language,
-//                           @PathParam("displayId") long displayId,
-//                           DisplayBean displayBean,
-//                           @DefaultValue("true") @QueryParam("_metadata") boolean _metadata) throws WWSApplicationException {
-//
-//        logger.debug("START");
-//        logger.info(String.format("Service Request [@HeaderParam: accept_language=%s,@PathParam: displayId=%d,displayBean =%s,@QueryParam: _metadata=%b]",accept_language,displayId,displayBean,_metadata));
-//
-//        Display fromFrontEnd = adaptDisplayBean(displayBean);
-//        if (displayId < 0){
-//            logger.error("Operation not admissible TBCM_DISPLAY: displayId < 1" + displayId);
-//            throw new WWSApplicationException(Response.Status.BAD_REQUEST,
-//                    new ErrorBuilder(Constants.ErrorLevel.ERROR)
-//                            .code(WSErrorCode.DisplayService.CODE, WSErrorCode.DisplayService.UPDATE_DISPLAY, "001")
-//                            .message(resourseBundleManager.getErrorMessage(accept_language, "service.display.not_exist"))
-//                            .addParameter("" + displayId)
-//                            .build());
-//        }
-//        Display displayFromDb = entityManager.find(typeParameterClass, displayId);
-//        if (displayFromDb == null) {
-//            logger.error("No result founds in table TBCM_DISPLAY");
-//            throw new WWSApplicationException(Response.Status.BAD_REQUEST,
-//                    new ErrorBuilder(Constants.ErrorLevel.ERROR)
-//                            .code(WSErrorCode.DisplayService.CODE, WSErrorCode.DisplayService.UPDATE_DISPLAY, "002")
-//                            .message(resourseBundleManager.getErrorMessage(accept_language, "service.display.not_exist"))
-//                            .addParameter("" + displayId)
-//                            .build());
-//        }
-//
-//        logger.debug("displayId=" + displayId);
-//        updateDisplay(displayFromDb, fromFrontEnd);
-//
-//        entityManager.merge(displayFromDb);
-//        entityManager.flush();
-//
-//        String message = displayId == -1 ? "create" : "update";
-//
-//        logger.debug("Display " + message + " {}", displayId);
-//        logger.debug("END");
-//        return Response.status(Response.Status.NO_CONTENT).build();
-//    }
-//@Transactional
-//public boolean changeClienteName(int id, String newName) {
-//    Collection<Cliente> cliente = clienteDao.findAllCliente();
-//
-//    for (Cliente c : cliente) {
-//
-//        if(c.getIdCliente() == id)
-//            clienteDao.newClienteName(c , newName);
-//    }
-//    return true;
-//}
+    @Transactional
+    public String updateAnimal(@PathParam("animalId") long animalId, AnimalBean animalBean) {
+
+        System.out.println("START");
+        System.out.println("@PathParam animalId: " + animalId);
+        System.out.println("AnimalBean: " + animalBean);
+
+        Animal animalFromFrontEnd = adaptAnimalBean(animalBean);
+        if (animalId < 0){
+            System.out.println("Operation not admissible TBL_ANIMAL: animalId < 1 " + animalId);
+        }
+
+        Animal animalFromDB = animalDao.getAnimal(animalId);
+        if (animalFromDB == null) {
+            System.out.println("No result founds in table TBL_ANIMAL");
+        }
+
+        System.out.println("animalId = " + animalId);
+        updateAnimal(animalFromDB, animalFromFrontEnd);
+
+        String response = animalDao.updateAnimal(animalFromDB);
+
+        String message = animalId == -1 ? "create" : "update";
+
+        System.out.println("Animal " + message + " { " + animalFromDB + " } ");
+        System.out.println("END");
+        return response;
+    }
 
 //    @POST
 //    @Consumes(MediaType.APPLICATION_JSON)
@@ -242,85 +215,33 @@ public class AnimalServiceImpl implements AnimalService {
         return animalBean;
     }
 
-//    /**
-//     *
-//     * @param displayBean
-//     * @return
-//     */
-//    private Display adaptDisplayBean(DisplayBean displayBean) {
-//        Display display = new Display();
-//        display.setDisplayName(displayBean.getDisplay_name());
-//        display.setDisplayCode(displayBean.getDisplay_code());
-//        display.setLayoutCode(displayBean.getLayout_code());
-//        display.setVerticalResolution(displayBean.getVertical_resolution());
-//        display.setHorizontalResolution(displayBean.getHorizontal_resolution());
-//        display.setTotalHeight(displayBean.getTotal_height());
-//        display.setResourceId(displayBean.getResource_id());
-//
-//        Set<Asset> assetSet = new HashSet<Asset>();
-//        Asset asset = null;
-//        for (AssetBean assetBean : displayBean.getAsset_set_bean()) {
-//
-//            asset = new Asset();
-//            asset.setAssetId(assetBean.getAsset_id());
-//            asset.setAssetName(assetBean.getName());
-//
-//            assetSet.add(asset);
-//        }
-//        display.setAssetSet(assetSet);
-//
-//        List<DisplayCell> displayCellList = new ArrayList<DisplayCell>();
-//        DisplayCell displayCell = null;
-//        for (DisplayCellBean displayCellBean : displayBean.getDisplay_cell_list_bean()) {
-//            displayCell = adaptDisplayCellBean(displayCellBean);
-//            displayCellList.add(displayCell);
-//        }
-//        display.setDisplayCellList(displayCellList);
-//
-//        return display;
-//    }
+    /**
+     *
+     * @param animalBean
+     * @return
+     */
+    private Animal adaptAnimalBean(AnimalBean animalBean) {
+        Animal animal = new Animal();
+        animal.setAnimalName(animalBean.getAnimal_name());
+        animal.setAnimalFamily(animalBean.getAnimal_family());
+        animal.setAnimalRace(animalBean.getAnimal_race());
+        animal.setAnimalDescent(animalBean.getAnimal_descent());
+        animal.setAnimalLegs(animalBean.getAnimal_legs());
+        return animal;
+    }
 
-//    /**
-//     *
-//     * @param displayFromDB
-//     * @param displayFromFrontEnd
-//     * @param displayBean
-//     * @param language
-//     */
-//    private void updateDisplay(Display displayFromDB, Display displayFromFrontEnd) {
-//
-//        displayFromDB.setModificationDate(new Timestamp(new Date().getTime()));
-//        displayFromDB.setDisplayName(displayFromFrontEnd.getDisplayName());
-//        displayFromDB.setDisplayCode(displayFromFrontEnd.getDisplayCode());
-//        displayFromDB.setLayoutCode(displayFromFrontEnd.getLayoutCode());
-//        displayFromDB.setVerticalResolution(displayFromFrontEnd.getVerticalResolution());
-//        displayFromDB.setHorizontalResolution(displayFromFrontEnd.getHorizontalResolution());
-//        displayFromDB.setTotalHeight(displayFromFrontEnd.getTotalHeight());
-//        displayFromDB.setResourceId(displayFromFrontEnd.getResourceId());
-//
-//        List<DisplayCell> removeCellList = new ArrayList<DisplayCell>();
-//        for (DisplayCell displayCellFromDB : displayFromDB.getDisplayCellList()) {
-//            DisplayCell displayCell = null;
-//            for (DisplayCell displayCellFromFrontEnd : displayFromFrontEnd.getDisplayCellList()) {
-//                if (displayCellFromDB.getDisplayCellId() == displayCellFromFrontEnd.getDisplayCellId()) {
-//                    updateDisplayCell(displayCellFromDB, displayCellFromFrontEnd);
-//                    displayCell = displayCellFromDB;
-//                    break;
-//                }
-//            }
-//            if (displayCell == null) {
-//                removeCellList.add(displayCellFromDB);
-//            }
-//        }
-//        for (DisplayCell cellToRemove : removeCellList) {
-//            displayFromDB.removeCell(cellToRemove);
-//        }
-//        for (DisplayCell displayCellFromFrontEnd : displayFromFrontEnd.getDisplayCellList()) {
-//            if (displayCellFromFrontEnd.getDisplayCellId() == 0) {
-//                displayFromDB.addCell(displayCellFromFrontEnd);
-//            }
-//        }
-//    }
+    /**
+     *
+     * @param animalFromDB
+     * @param animalFromFrontEnd
+     */
+    private void updateAnimal(Animal animalFromDB, Animal animalFromFrontEnd) {
+        animalFromDB.setAnimalName(animalFromFrontEnd.getAnimalName());
+        animalFromDB.setAnimalFamily(animalFromFrontEnd.getAnimalFamily());
+        animalFromDB.setAnimalRace(animalFromFrontEnd.getAnimalRace());
+        animalFromDB.setAnimalDescent(animalFromFrontEnd.getAnimalDescent());
+        animalFromDB.setAnimalLegs(animalFromFrontEnd.getAnimalLegs());
+    }
 }
 
 
