@@ -10,5 +10,7 @@ import org.springframework.stereotype.Service;
 public interface AnimalService {
     AnimalBeanCollectionResponse getAnimals();
     AnimalBeanResponse getAnimal(long animalId);
+    AnimalBeanResponse createAnimal(AnimalBean animalBean);
     String updateAnimal(long animalId, AnimalBean animalBean);
+    String deleteAnimal(long animalId);
 }

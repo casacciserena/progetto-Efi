@@ -40,29 +40,17 @@ public class RestController  {
         return animalService.updateAnimal(animalId, animalBean);
     }
 
-//    //permette di aggiungere una nuova riga alla tabella CLIENTE inserendo una stringa con il nome
-//    //l'id viene generato automaticamente
-//    @RequestMapping(method = RequestMethod.POST, value = "/addCliente")
-//    @ResponseBody
-//    public String addCliente(@RequestParam(value = "nomeNuovoCliente") String name) {
-//        if (clienteService.newCliente(name)) {
-//
-//            return "Cliente inserito";
-//        }
-//        return "Cliente non inserito";
-//    }
+    @RequestMapping(value = "/animal", method = RequestMethod.POST)
+    @ResponseBody
+    public AnimalBeanResponse animalBeanResponse(@RequestBody AnimalBean animalBean) {
+        return animalService.createAnimal(animalBean);
+    }
 
-//    //cancella una riga dalla tabella CLIENTE con id selezionato
-//    @RequestMapping(value = "/cliente/{id}", method = RequestMethod.DELETE)
-//    @ResponseBody
-//    public String deleteCliente(@PathVariable(value="id") int id) {
-//        if (clienteService.deleteCliente(id)) {
-//            return "Cliente cancellato";
-//        }
-//        else {
-//            return "Cliente non cancellato";
-//        }
-//    }
+    @RequestMapping(value = "/animal/{animalId}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String response(@PathVariable(value = "animalId") long animalId) {
+        return animalService.deleteAnimal(animalId);
+    }
 
     //------- OWNER -------//
 

@@ -49,48 +49,25 @@ public class AnimalDaoImpl implements AnimalDao {
         return response;
     }
 
-//    @Transactional
-//    public boolean newClienteName(Cliente c, String newName) {
-//        boolean hasErrors = false;
-//        try {
-//            c.setNomeCliente(newName);
-//        }
-//        catch(Exception e) {
-//
-//            hasErrors = true;
-//        }
-//        return hasErrors;
-//    }
+    @Transactional
+    public Animal createAnimal(Animal animal) {
+        entityManager.persist(animal);
+        entityManager.flush();
+        return animal;
+    }
 
-//    @Transactional
-//    public boolean insertCliente(Cliente cliente, String name){
-//
-//        boolean hasErrors = true;
-//
-//        Criteria criteria = getSession().createCriteria(Cliente.class);
-//        criteria.add(Restrictions.eq("nomeCliente", name));
-//        Cliente cliente1 = (Cliente)criteria.uniqueResult();
-//
-//        try {
-//            if(cliente1 == null)
-//                getSession().save(cliente);
-//            else
-//                hasErrors = false;
-//        }
-//        catch(Exception e) {
-//            hasErrors = false;
-//            e.printStackTrace();
-//        }
-//        return hasErrors;
-//    }
-
-//    @Transactional
-//    public boolean deleteCliente(Integer id) {
-//        Collection<Cliente> clienteCollection = findClienteById(id);
-//        for(Cliente cliente : clienteCollection) {
-//            if(cliente.getIdCliente() == id)
-//                getSession().delete(cliente);
-//        }
-//        return true;
-//    }
+    @Transactional
+    public String deleteAnimal(long animalId) {
+        String response;
+        try {
+            entityManager.createNamedQuery("deleteAnimal", Animal.class)
+                    .setParameter("animalId", animalId)
+                    .executeUpdate();
+            entityManager.flush();
+            response = "SUCCESS";
+        } catch(Exception exception) {
+            response = "FAILED";
+        }
+        return response;
+    }
 }

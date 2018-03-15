@@ -15,6 +15,9 @@ import javax.persistence.*;
                 "FROM Animal a " +
                 "WHERE a.animalId = :animalId"
         ),
+        @NamedQuery(name = "deleteAnimal", query = "" +
+                "DELETE FROM Animal a WHERE a.animalId = :animalId"
+        ),
 })
 public class Animal {
     @Id

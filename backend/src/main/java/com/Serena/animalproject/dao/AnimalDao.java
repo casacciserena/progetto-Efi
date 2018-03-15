@@ -7,5 +7,7 @@ import java.util.Collection;
 public interface AnimalDao {
     Collection<Animal> getAnimals();
     Animal getAnimal(long animalId);
+    Animal createAnimal (Animal animal);
     String updateAnimal(Animal animalFromDB);
+    String deleteAnimal(long animalId);
 }

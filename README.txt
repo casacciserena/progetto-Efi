@@ -10,3 +10,14 @@
 "animal_race": "pappagallo",
 "animal_descent": "cacatua",
 "animal_legs": 2}
+
+-JSON example to create
+{"animal_name": "Stilton",
+
+"animal_family": "cacatuidae",
+
+"animal_race": "pappagallo",
+
+"animal_descent": "cacatua",
+
+"animal_legs": 2}

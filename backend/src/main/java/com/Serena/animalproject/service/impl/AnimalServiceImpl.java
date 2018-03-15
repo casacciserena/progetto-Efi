@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import javax.websocket.server.PathParam;
-import javax.xml.ws.Response;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -93,85 +92,45 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public DisplayBeanResponse create(@HeaderParam(HttpHeaders.ACCEPT_LANGUAGE) String accept_language,
-//                                      DisplayBean displayBean,
-//                                      @DefaultValue("true") @QueryParam("_metadata") boolean _metadata) throws WWSApplicationException {
-//
-//        logger.debug("START");
-//        logger.info(String.format("Service Request [@HeaderParam: accept_language=%s,displayBean =%s,@QueryParam: _metadata=%b]",accept_language,displayBean,_metadata));
-//
-//        Display display = adaptDisplayBean(displayBean);
-//        LoggerUtils.debugObject(logger, "BEFORE PERSIST display",display);
-//        entityManager.persist(display);
-//        entityManager.flush();
-//        LoggerUtils.debugObject(logger, "AFTER PERSIST display",display);
-//
-//        DisplayBean displayBeanResponse = createDisplayBean(display);
-//        LoggerUtils.debugObject(logger, "created DisplayBeanResponse object= ",displayBeanResponse);
-//
-//        DisplayBeanResponse response = new DisplayBeanResponse();
-//        response.setContent(displayBeanResponse);
-//        if (_metadata) {
-//            response.set_metadata(EntityMetadata.createEntityMetadata(display));
-//        }
-//
-//        logger.debug("END");
-//        return response;
-//    }
-//@Transactional
-//public boolean newCliente(String name) {
-//    Cliente cliente = new Cliente();
-//    cliente.setNomeCliente(name);
-//    cliente.setIdCliente(findLastId());
-//    if(clienteDao.insertCliente(cliente, name))
-//        return true;
-//    else
-//        return false;
-//}
+    @Transactional
+    public AnimalBeanResponse createAnimal(AnimalBean animalBean) {
 
-//    @DELETE
-//    @Path("/{displayId}")
-//    public Response delete(@HeaderParam(HttpHeaders.ACCEPT_LANGUAGE) String accept_language,
-//                           @PathParam("displayId") long displayId,
-//                           @DefaultValue("true") @QueryParam("_metadata") boolean _metadata) throws WWSApplicationException {
-//
-//        logger.debug("START");
-//        logger.info(String.format("Service Request [@HeaderParam: accept_language=%s,@PathParam: displayId=%s,@QueryParam: _metadata=%b]",accept_language,displayId,_metadata));
-//
-//        Display display = entityManager.find(typeParameterClass, displayId);
-//        LoggerUtils.debugObject(logger, "display=",display);
-//        if (display == null) {
-//            logger.error("No result founds in table TBCM_DISPLAY");
-//            throw new WWSApplicationException(Response.Status.BAD_REQUEST,
-//                    new ErrorBuilder(Constants.ErrorLevel.ERROR)
-//                            .code(WSErrorCode.DisplayService.CODE, WSErrorCode.DisplayService.DELETE_DISPLAY, "001")
-//                            .message(resourseBundleManager.getErrorMessage(accept_language, "service.branch.display.not_exist"))
-//                            .addParameter("" + displayId)
-//                            .build());
-//        }
-//
-//        int recordDisplayDeleted = entityManager.createNamedQuery("deleteDisplayById")
-//                .setParameter("displayId", displayId)
-//                .executeUpdate();
-//        entityManager.flush();
-//
-//        int recordResourceDeleted = 0;
-//
-//        logger.debug("deleted {} records recordDisplayDeleted recordResourceDeleted",
-//                recordDisplayDeleted, recordResourceDeleted);
-//        logger.debug("END");
-//        return Response.status(Response.Status.NO_CONTENT).build();
-//    }
-//@Transactional
-//public boolean deleteCliente(int id) {
-//    if(clienteDao.deleteCliente(id))
-//        return true;
-//    else
-//        return false;
-//}
+        System.out.println("START");
+        System.out.println("AnimalBean: " + animalBean);
+
+        Animal animal = adaptAnimalBean(animalBean);
+        System.out.println("BEFORE PERSIST animal: " + animal);
+
+        animalDao.createAnimal(animal);
+
+        System.out.println("AFTER PERSIST animal: " + animal);
+
+        animalBean = createAnimalBean(animal);
+        System.out.println("created AnimalBean object = " + animalBean);
+
+        AnimalBeanResponse response = new AnimalBeanResponse();
+        response.setContent(animalBean);
+        System.out.println("END");
+        return response;
+    }
+
+    @Transactional
+    public String deleteAnimal(@PathParam("animalId") long animalId) {
+
+        System.out.println("START");
+        System.out.println("@PathParam animalId: " + animalId);
+
+        Animal animal = animalDao.getAnimal(animalId);
+        System.out.println("animal = " + animal);
+        if (animal == null) {
+            System.out.println("No result founds in table TBL_ANIMAL");
+        }
+
+        String response = animalDao.deleteAnimal(animalId);
+
+        System.out.println("END");
+        return response;
+    }
 
     /**
      *
