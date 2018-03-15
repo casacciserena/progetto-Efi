@@ -7,6 +7,7 @@ import com.serena.animalproject.utility.JPAUtility;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.transaction.Transactional;
 
 import java.util.Collection;
@@ -15,13 +16,7 @@ import java.util.Collection;
 public class AnimalDaoImpl implements AnimalDao {
 
     protected EntityManager entityManager = JPAUtility.getEntityManager();
-
-//    @Autowired
-//    private SessionFactory sessionFactory;
-//
-//    protected Session getSession() {
-//        return sessionFactory.getCurrentSession();
-//    }
+    EntityTransaction entityTransaction = entityManager.getTransaction();
 
     @Transactional
     public Collection<Animal> getAnimals() {
@@ -39,11 +34,13 @@ public class AnimalDaoImpl implements AnimalDao {
     @Transactional
     public String updateAnimal(Animal animalFromDB) {
         String response;
+        entityTransaction.begin();
         try {
             entityManager.merge(animalFromDB);
-            entityManager.flush();
+            entityTransaction.commit();
             response = "SUCCESS";
         } catch(Exception exception) {
+            entityTransaction.rollback();
             response = "FAILED";
         }
         return response;
@@ -51,21 +48,24 @@ public class AnimalDaoImpl implements AnimalDao {
 
     @Transactional
     public Animal createAnimal(Animal animal) {
+        entityTransaction.begin();
         entityManager.persist(animal);
-        entityManager.flush();
+        entityTransaction.commit();
         return animal;
     }
 
     @Transactional
     public String deleteAnimal(long animalId) {
         String response;
+        entityTransaction.begin();
         try {
-            entityManager.createNamedQuery("deleteAnimal", Animal.class)
+            entityManager.createNamedQuery("deleteAnimal")
                     .setParameter("animalId", animalId)
                     .executeUpdate();
-            entityManager.flush();
+            entityTransaction.commit();
             response = "SUCCESS";
         } catch(Exception exception) {
+            entityTransaction.rollback();
             response = "FAILED";
         }
         return response;

@@ -6,6 +6,9 @@ import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse
 import com.serena.animalproject.model.bean.response.AnimalBeanResponse;
 import com.serena.animalproject.service.AnimalService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,8 @@ import java.util.Collection;
 
 @Service("animalService")
 public class AnimalServiceImpl implements AnimalService {
+
+    //protected final static Logger logger = LoggerFactory.getLogger(Animal.class);
 
     @Autowired
     private com.serena.animalproject.dao.AnimalDao animalDao;
@@ -67,6 +72,7 @@ public class AnimalServiceImpl implements AnimalService {
     public String updateAnimal(@PathParam("animalId") long animalId, AnimalBean animalBean) {
 
         System.out.println("START");
+        //logger.info("START");
         System.out.println("@PathParam animalId: " + animalId);
         System.out.println("AnimalBean: " + animalBean);
 

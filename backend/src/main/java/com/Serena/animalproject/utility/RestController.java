@@ -40,7 +40,7 @@ public class RestController  {
         return animalService.updateAnimal(animalId, animalBean);
     }
 
-    @RequestMapping(value = "/animal", method = RequestMethod.POST)
+    @RequestMapping(value = "/animal", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public AnimalBeanResponse animalBeanResponse(@RequestBody AnimalBean animalBean) {
         return animalService.createAnimal(animalBean);

@@ -4,8 +4,7 @@
 "mvn package && java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8080,suspend=n \-jar target/backend.war"
 
 -JSON example to update
-{"animal_id": 2,
-"animal_name": "Stilton",
+{"animal_name": "Stilton",
 "animal_family": "cacatuidae",
 "animal_race": "pappagallo",
 "animal_descent": "cacatua",
