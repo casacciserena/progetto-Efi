@@ -21,7 +21,7 @@ import java.util.Collection;
 @Service("animalService")
 public class AnimalServiceImpl implements AnimalService {
 
-    //protected final static Logger logger = LoggerFactory.getLogger(Animal.class);
+    protected final static Logger logger = LoggerFactory.getLogger(AnimalServiceImpl.class);
 
     @Autowired
     private com.serena.animalproject.dao.AnimalDao animalDao;
@@ -29,21 +29,21 @@ public class AnimalServiceImpl implements AnimalService {
     @Transactional
     public AnimalBeanCollectionResponse getAnimals() {
 
-        System.out.println("START");
+        logger.info("START");
 
         Collection<Animal> animalCollection = animalDao.getAnimals();
 
-        System.out.println("animalCollection = " + animalCollection);
+        logger.info("animalCollection = " + animalCollection);
         if (animalCollection.isEmpty()) {
-            System.out.println("No result founds in table TBL_ANIMAL");
+            logger.error("No result founds in table TBL_ANIMAL");
         }
 
         Collection<AnimalBean> animalBeanCollection = createAnimalBeanCollection(animalCollection);
-        System.out.println("animalBeanCollection = " + animalBeanCollection);
+        logger.info("animalBeanCollection = " + animalBeanCollection);
 
         AnimalBeanCollectionResponse response = new AnimalBeanCollectionResponse();
         response.setContent(animalBeanCollection);
-        System.out.println("END");
+        logger.info("END");
         return response;
     }
 
@@ -72,7 +72,6 @@ public class AnimalServiceImpl implements AnimalService {
     public String updateAnimal(@PathParam("animalId") long animalId, AnimalBean animalBean) {
 
         System.out.println("START");
-        //logger.info("START");
         System.out.println("@PathParam animalId: " + animalId);
         System.out.println("AnimalBean: " + animalBean);
 

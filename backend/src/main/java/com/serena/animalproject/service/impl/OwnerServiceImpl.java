@@ -67,8 +67,9 @@ public class OwnerServiceImpl implements OwnerService {
         System.out.println("END");
         return response;
     }
+
     @Transactional
-    public String updateOwner(@PathParam("ownerId") long ownerId,OwnerBean ownerBean) {
+    public String updateOwner(@PathParam("ownerId") long ownerId, OwnerBean ownerBean) {
 
         System.out.println("START");
         //logger.info("START");
@@ -76,21 +77,21 @@ public class OwnerServiceImpl implements OwnerService {
         System.out.println("OwnerBean: " + ownerBean);
 
         Owner ownerFromFrontEnd = adaptOwnerBean(ownerBean);
-        if (animalId < 0){
+        if (ownerId < 0){
             System.out.println("Operation not admissible TBL_OWNER: ownerId < 1 " + ownerId);
         }
 
         Owner ownerFromDB = ownerDao.getOwner(ownerId);
-        if (OwnerFromDB == null) {
+        if (ownerFromDB == null) {
             System.out.println("No result founds in table TBL_OWNER");
         }
 
         System.out.println("ownerlId = " + ownerId);
-        updateOwner(OwnerFromDB, ownerFromFrontEnd);
+        updateOwner(ownerFromDB, ownerFromFrontEnd);
 
-        String response = animalDao.updateOwner(ownerFromDB);
+        String response = ownerDao.updateOwner(ownerFromDB);
 
-        String message = animalId == -1 ? "create" : "update";
+        String message = ownerId == -1 ? "create" : "update";
 
         System.out.println("Owner " + message + " { " + ownerFromDB + " } ");
         System.out.println("END");
@@ -106,11 +107,11 @@ public class OwnerServiceImpl implements OwnerService {
         Owner owner = adaptOwnerBean(ownerBean);
         System.out.println("BEFORE PERSIST owner: " + owner);
 
-        animalDao.createOwner(owner);
+        ownerDao.createOwner(owner);
 
         System.out.println("AFTER PERSIST owner: " + owner);
 
-        animalBean = createOwnerBean(owner);
+        ownerBean = createOwnerBean(owner);
         System.out.println("created OwnerBean object = " + ownerBean);
 
         OwnerBeanResponse response = new OwnerBeanResponse();
@@ -162,5 +163,49 @@ public class OwnerServiceImpl implements OwnerService {
            ownerBeanCollection.add(ownerBean);
         }
         return ownerBeanCollection;
+    }
+
+    /**
+     *
+     * @param owner
+     * @return
+     */
+    private OwnerBean createOwnerBean(Owner owner) {
+        OwnerBean ownerBean = new OwnerBean();
+        ownerBean.setOwner_id(owner.getOwnerId());
+        ownerBean.setOwner_name(owner.getOwnerName());
+        ownerBean.setOwner_surname(owner.getOwnerSurname());
+        ownerBean.setOwner_age(owner.getOwnerAge());
+        ownerBean.setOwner_sex(owner.getOwnerSex());
+        ownerBean.setOwner_mobile_phone(owner.getOwnerMobilePhone());
+        return ownerBean;
+    }
+
+    /**
+     *
+     * @param ownerBean
+     * @return
+     */
+    private Owner adaptOwnerBean(OwnerBean ownerBean) {
+        Owner owner = new Owner();
+        owner.setOwnerName(ownerBean.getOwner_name());
+        owner.setOwnerSurname(ownerBean.getOwner_surname());
+        owner.setOwnerAge(ownerBean.getOwner_age());
+        owner.setOwnerSex(ownerBean.getOwner_sex());
+        owner.setOwnerMobilePhone(ownerBean.getOwner_mobile_phone());
+        return owner;
+    }
+
+    /**
+     *
+     * @param ownerFromDB
+     * @param ownerFromFrontEnd
+     */
+    private void updateOwner(Owner ownerFromDB, Owner ownerFromFrontEnd) {
+        ownerFromDB.setOwnerName(ownerFromFrontEnd.getOwnerName());
+        ownerFromDB.setOwnerSurname(ownerFromFrontEnd.getOwnerSurname());
+        ownerFromDB.setOwnerAge(ownerFromFrontEnd.getOwnerAge());
+        ownerFromDB.setOwnerSex(ownerFromFrontEnd.getOwnerSex());
+        ownerFromDB.setOwnerMobilePhone(ownerFromFrontEnd.getOwnerMobilePhone());
     }
 }

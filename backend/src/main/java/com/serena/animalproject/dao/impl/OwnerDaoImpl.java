@@ -16,16 +16,16 @@ public class OwnerDaoImpl implements OwnerDao {
 
     protected EntityManager entityManager = JPAUtility.getEntityManager();
 
-//    @Autowired
-//    private SessionFactory sessionFactory;
-//
-//    protected Session getSession() {
-//        return sessionFactory.getCurrentSession();
-//    }
-
     @Transactional
     public Collection<Owner> getOwners() {
         return (Collection<Owner>) entityManager.createNamedQuery("getOwners", Owner.class)
                 .getResultList();
+    }
+
+    @Transactional
+    public Owner getOwner(long ownerId) {
+        return (Owner) entityManager.createNamedQuery("getOwner", Owner.class)
+                .setParameter("ownerId", ownerId)
+                .getSingleResult();
     }
 }
