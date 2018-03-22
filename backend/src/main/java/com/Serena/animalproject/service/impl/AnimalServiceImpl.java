@@ -26,6 +26,7 @@ public class AnimalServiceImpl implements AnimalService {
     @Autowired
     private com.serena.animalproject.dao.AnimalDao animalDao;
 
+    // Giro getAnimals
     @Transactional
     public AnimalBeanCollectionResponse getAnimals() {
 
@@ -47,6 +48,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro getAnimal
     @Transactional
     public AnimalBeanResponse getAnimal(@PathParam("animalId") long animalId) {
 
@@ -68,6 +70,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro updateAnimal
     @Transactional
     public String updateAnimal(@PathParam("animalId") long animalId, AnimalBean animalBean) {
 
@@ -97,6 +100,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro createAnimal
     @Transactional
     public AnimalBeanResponse createAnimal(AnimalBean animalBean) {
 
@@ -119,6 +123,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro deleteAnimal
     @Transactional
     public String deleteAnimal(@PathParam("animalId") long animalId) {
 

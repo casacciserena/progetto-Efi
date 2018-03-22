@@ -8,9 +8,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AnimalService {
+    // Giro getAnimals
     AnimalBeanCollectionResponse getAnimals();
+
+    // Giro getAnimal
     AnimalBeanResponse getAnimal(long animalId);
+
+    // Giro createAnimal
     AnimalBeanResponse createAnimal(AnimalBean animalBean);
+
+    // Giro updateAnimal
     String updateAnimal(long animalId, AnimalBean animalBean);
+
+    // Giro deleteAnimal
     String deleteAnimal(long animalId);
 }

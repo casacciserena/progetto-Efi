@@ -22,30 +22,35 @@ public class RestController  {
 
     //------- ANIMAL ------//
 
+    // Giro getAnimals
     @RequestMapping(value = "/animal", method = RequestMethod.GET)
     @ResponseBody
     public AnimalBeanCollectionResponse animalBeanCollectionResponse() {
         return animalService.getAnimals();
     }
 
+    // Giro getAnimal
     @RequestMapping(value = "/animal/{animalId}", method = RequestMethod.GET)
     @ResponseBody
     public AnimalBeanResponse animalBeanResponse(@PathVariable(value = "animalId") long animalId) {
         return animalService.getAnimal(animalId);
     }
 
+    // Giro updateAnimal
     @RequestMapping(value = "/animal/{animalId}", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
     public String response(@PathVariable(value = "animalId") long animalId, @RequestBody AnimalBean animalBean) {
         return animalService.updateAnimal(animalId, animalBean);
     }
 
+    // Giro createAnimal
     @RequestMapping(value = "/animal", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public AnimalBeanResponse animalBeanResponse(@RequestBody AnimalBean animalBean) {
         return animalService.createAnimal(animalBean);
     }
 
+    // Giro deleteAnimal
     @RequestMapping(value = "/animal/{animalId}", method = RequestMethod.DELETE)
     @ResponseBody
     public String response(@PathVariable(value = "animalId") long animalId) {
@@ -54,6 +59,7 @@ public class RestController  {
 
     //------- OWNER -------//
 
+    // Giro getOwners
     @RequestMapping(value = "/owner", method = RequestMethod.GET)
     @ResponseBody
     public OwnerBeanCollectionResponse ownerBeanCollectionResponse() {

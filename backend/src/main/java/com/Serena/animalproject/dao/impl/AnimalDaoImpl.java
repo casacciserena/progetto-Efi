@@ -18,12 +18,14 @@ public class AnimalDaoImpl implements AnimalDao {
     protected EntityManager entityManager = JPAUtility.getEntityManager();
     EntityTransaction entityTransaction = entityManager.getTransaction();
 
+    // Giro getAnimals
     @Transactional
     public Collection<Animal> getAnimals() {
         return (Collection<Animal>) entityManager.createNamedQuery("getAnimals", Animal.class)
                 .getResultList();
     }
 
+    //  Giro getAnimal
     @Transactional
     public Animal getAnimal(long animalId) {
         return (Animal) entityManager.createNamedQuery("getAnimal", Animal.class)
@@ -31,6 +33,7 @@ public class AnimalDaoImpl implements AnimalDao {
                 .getSingleResult();
     }
 
+    // Giro updateAnimal
     @Transactional
     public String updateAnimal(Animal animalFromDB) {
         String response;
@@ -46,6 +49,7 @@ public class AnimalDaoImpl implements AnimalDao {
         return response;
     }
 
+    // Giro createAnimal
     @Transactional
     public Animal createAnimal(Animal animal) {
         entityTransaction.begin();
@@ -54,6 +58,7 @@ public class AnimalDaoImpl implements AnimalDao {
         return animal;
     }
 
+    // Giro deleteAnimal
     @Transactional
     public String deleteAnimal(long animalId) {
         String response;

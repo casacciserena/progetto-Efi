@@ -5,16 +5,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TBL_ANIMAL")
 @NamedQueries({
+        // Giro getAnimals
 	    @NamedQuery(name = "getAnimals", query = "" +
 		        "SELECT a " +
 		        "FROM Animal a " +
 		        "ORDER BY a.animalName"
 	    ),
+        // Giro getAnimal
         @NamedQuery(name = "getAnimal", query = "" +
                 "SELECT a " +
                 "FROM Animal a " +
                 "WHERE a.animalId = :animalId"
         ),
+        // Giro deleteAnimal
         @NamedQuery(name = "deleteAnimal", query = "" +
                 "DELETE FROM Animal a WHERE a.animalId = :animalId"
         ),
