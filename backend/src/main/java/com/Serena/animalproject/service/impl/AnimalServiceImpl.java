@@ -21,32 +21,34 @@ import java.util.Collection;
 @Service("animalService")
 public class AnimalServiceImpl implements AnimalService {
 
-    //protected final static Logger logger = LoggerFactory.getLogger(Animal.class);
+    protected final static Logger logger = LoggerFactory.getLogger(AnimalServiceImpl.class);
 
     @Autowired
     private com.serena.animalproject.dao.AnimalDao animalDao;
 
+    // Giro getAnimals
     @Transactional
     public AnimalBeanCollectionResponse getAnimals() {
 
-        System.out.println("START");
+        logger.info("START");
 
         Collection<Animal> animalCollection = animalDao.getAnimals();
 
-        System.out.println("animalCollection = " + animalCollection);
+        logger.info("animalCollection = " + animalCollection);
         if (animalCollection.isEmpty()) {
-            System.out.println("No result founds in table TBL_ANIMAL");
+            logger.error("No result founds in table TBL_ANIMAL");
         }
 
         Collection<AnimalBean> animalBeanCollection = createAnimalBeanCollection(animalCollection);
-        System.out.println("animalBeanCollection = " + animalBeanCollection);
+        logger.info("animalBeanCollection = " + animalBeanCollection);
 
         AnimalBeanCollectionResponse response = new AnimalBeanCollectionResponse();
         response.setContent(animalBeanCollection);
-        System.out.println("END");
+        logger.info("END");
         return response;
     }
 
+    // Giro getAnimal
     @Transactional
     public AnimalBeanResponse getAnimal(@PathParam("animalId") long animalId) {
 
@@ -68,11 +70,11 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro updateAnimal
     @Transactional
     public String updateAnimal(@PathParam("animalId") long animalId, AnimalBean animalBean) {
 
         System.out.println("START");
-        //logger.info("START");
         System.out.println("@PathParam animalId: " + animalId);
         System.out.println("AnimalBean: " + animalBean);
 
@@ -98,6 +100,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro createAnimal
     @Transactional
     public AnimalBeanResponse createAnimal(AnimalBean animalBean) {
 
@@ -120,6 +123,7 @@ public class AnimalServiceImpl implements AnimalService {
         return response;
     }
 
+    // Giro deleteAnimal
     @Transactional
     public String deleteAnimal(@PathParam("animalId") long animalId) {
 

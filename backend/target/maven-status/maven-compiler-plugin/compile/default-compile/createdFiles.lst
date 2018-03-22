@@ -13,6 +13,7 @@ com\serena\animalproject\service\impl\AnimalServiceImpl.class
 com\serena\animalproject\model\bean\response\OwnerBeanCollectionResponse.class
 com\serena\animalproject\model\bean\response\AnimalBeanResponse.class
 com\serena\animalproject\Application.class
+com\serena\animalproject\model\bean\response\OwnerBeanResponse.class
 com\serena\animalproject\dao\impl\AnimalDaoImpl.class
 com\serena\animalproject\dao\OwnerDao.class
 com\serena\animalproject\service\OwnerService.class

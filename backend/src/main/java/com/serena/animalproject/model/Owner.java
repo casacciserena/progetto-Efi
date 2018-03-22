@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "TBL_OWNER")
 @NamedQueries({
+        // Giro getOwners
         @NamedQuery(name = "getOwners", query = "" +
                 "SELECT o " +
                 "FROM Owner o " +
