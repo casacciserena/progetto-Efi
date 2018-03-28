@@ -30,7 +30,7 @@ public class AnimalBeanResponse {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(this.getClass().getSimpleName())
-			.append("[content = ").append(content).append("]");
+				.append("[content = ").append(content).append("]");
 		return builder.toString();
 	}
 }
