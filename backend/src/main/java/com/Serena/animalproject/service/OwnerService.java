@@ -11,14 +11,14 @@ public interface OwnerService {
     // Giro getOwners
     OwnerBeanCollectionResponse getOwners();
 
-    // Giro getOwner
-    /*OwnerBeanResponse getOwner(long ownerId);*/
+    //Giro getOwner
+    OwnerBeanResponse getOwner(long ownerId);
 
     // Giro createOwner
     //OwnerBeanResponse createOwner(OwnerBean ownerBean);
 
     // Giro updateOwner
-    //String updateOwner(long ownerId, OwnerBean ownerBean);
+    String updateOwner(long ownerId, OwnerBean ownerBean);
 
     // Giro deleteOwner
     //String deleteOwner(long ownerId);

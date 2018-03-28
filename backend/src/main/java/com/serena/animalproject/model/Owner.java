@@ -11,6 +11,16 @@ import javax.persistence.*;
                 "FROM Owner o " +
                 "ORDER BY o.ownerName"
         ),
+        // Giro getOwner
+        @NamedQuery(name = "getOwner", query = "" +
+                "SELECT o " +
+                "FROM Owner o " +
+                "WHERE o.ownerId = :ownerId"
+        ),
+        // Giro deleteOwner
+        @NamedQuery(name = "deleteOwner", query = "" +
+                "DELETE FROM Owner o WHERE o.ownerId = :ownerId"
+        ),
 })
 public class Owner {
     @Id

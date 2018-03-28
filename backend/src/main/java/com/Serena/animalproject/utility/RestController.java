@@ -4,6 +4,7 @@ import com.serena.animalproject.model.bean.AnimalBean;
 import com.serena.animalproject.model.bean.response.AnimalBeanCollectionResponse;
 import com.serena.animalproject.model.bean.response.AnimalBeanResponse;
 import com.serena.animalproject.model.bean.response.OwnerBeanCollectionResponse;
+import com.serena.animalproject.model.bean.response.OwnerBeanResponse;
 import com.serena.animalproject.service.AnimalService;
 import com.serena.animalproject.service.OwnerService;
 
@@ -65,7 +66,12 @@ public class RestController  {
     public OwnerBeanCollectionResponse ownerBeanCollectionResponse() {
         return ownerService.getOwners();
     }
+
+    // Giro getOwner
+    @RequestMapping(value = "/owner/{ownerId}", method = RequestMethod.GET)
+    @ResponseBody
+    public OwnerBeanResponse ownerBeanResponse(@PathVariable(value = "ownerId") long ownerId) {
+        return ownerService.getOwner(ownerId);
+    }
+
 }
-
-
-

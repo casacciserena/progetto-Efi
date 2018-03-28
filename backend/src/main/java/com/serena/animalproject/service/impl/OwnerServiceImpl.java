@@ -21,7 +21,7 @@ import java.util.Collection;
 @Service("ownerService")
 public class OwnerServiceImpl implements OwnerService {
 
-  //protected final static Logger logger = LoggerFactory.getLogger(Animal.class);
+  protected final static Logger logger = LoggerFactory.getLogger(OwnerServiceImpl.class);
 
   @Autowired
     private com.serena.animalproject.dao.OwnerDao ownerDao;
@@ -30,26 +30,26 @@ public class OwnerServiceImpl implements OwnerService {
     @Transactional
     public OwnerBeanCollectionResponse getOwners() {
 
-        System.out.println("START");
+        logger.info("START");
 
         Collection<Owner> ownerCollection = ownerDao.getOwners();
 
-        System.out.println("ownerCollection = " + ownerCollection);
+        logger.info("ownerCollection = " + ownerCollection);
         if (ownerCollection.isEmpty()) {
-            System.out.println("No result founds in table TBL_OWNER");
+            logger.error("No result founds in table TBL_OWNER");
         }
 
         Collection<OwnerBean> ownerBeanCollection = createOwnerBeanCollection(ownerCollection);
-        System.out.println("animalBeanCollection = " + ownerBeanCollection);
+        logger.info("animalBeanCollection = " + ownerBeanCollection);
 
         OwnerBeanCollectionResponse response = new OwnerBeanCollectionResponse();
         response.setContent(ownerBeanCollection);
-        System.out.println("END");
+        logger.info("END");
         return response;
     }
 
     // Giro getOwner
-    /*@Transactional
+    @Transactional
     public OwnerBeanResponse getOwner(@PathParam("ownerId") long ownerId) {
 
         System.out.println("START");
@@ -68,38 +68,37 @@ public class OwnerServiceImpl implements OwnerService {
         response.setContent(ownerBean);
         System.out.println("END");
         return response;
-    }*/
+    }
 
     // Giro updateOwner
-//    @Transactional
-//    public String updateOwner(@PathParam("ownerId") long ownerId, OwnerBean ownerBean) {
-//
-//        System.out.println("START");
-//        //logger.info("START");
-//        System.out.println("@PathParam ownerId: " + ownerId);
-//        System.out.println("OwnerBean: " + ownerBean);
-//
-//        Owner ownerFromFrontEnd = adaptOwnerBean(ownerBean);
-//        if (ownerId < 0){
-//            System.out.println("Operation not admissible TBL_OWNER: ownerId < 1 " + ownerId);
-//        }
-//
-//        Owner ownerFromDB = ownerDao.getOwner(ownerId);
-//        if (ownerFromDB == null) {
-//            System.out.println("No result founds in table TBL_OWNER");
-//        }
-//
-//        System.out.println("ownerlId = " + ownerId);
-//        updateOwner(ownerFromDB, ownerFromFrontEnd);
-//
-//        String response = ownerDao.updateOwner(ownerFromDB);
-//
-//        String message = ownerId == -1 ? "create" : "update";
-//
-//        System.out.println("Owner " + message + " { " + ownerFromDB + " } ");
-//        System.out.println("END");
-//        return response;
-//    }
+   @Transactional
+    public String updateOwner(@PathParam("ownerId") long ownerId, OwnerBean ownerBean) {
+
+        System.out.println("START");
+        logger.info("START");
+        System.out.println("@PathParam ownerId: " + ownerId);
+        System.out.println("OwnerBean: " + ownerBean);
+
+        Owner ownerFromFrontEnd = adaptOwnerBean(ownerBean);
+        if (ownerId < 0){
+          }
+
+      Owner ownerFromDB = ownerDao.getOwner(ownerId);
+        if (ownerFromDB == null) {
+            System.out.println("No result founds in table TBL_OWNER");
+        }
+
+        System.out.println("ownerlId = " + ownerId);
+                updateOwner(ownerFromDB, ownerFromFrontEnd);
+
+        String response = ownerDao.updateOwner(ownerFromDB);
+
+        String message = ownerId == -1 ? "create" : "update";
+
+        System.out.println("Owner " + message + " { " + ownerFromDB + " } ");
+                System.out.println("END");
+      return response;
+    }
 
     // Giro createOwner
 //    @Transactional

@@ -9,13 +9,13 @@ public interface OwnerDao {
     Collection<Owner> getOwners();
 
     // Giro getOwner
-    /*Owner getOwner (long ownerId);*/
+    Owner getOwner (long ownerId);
 
     // Giro createOwner
     //Owner createOwner (Owner owner);
 
     // Giro updateOwner
-    //String updateOwner(Owner ownerFromDB);
+    String updateOwner(Owner ownerFromDB);
 
     // Giro deleteOwner
     //String deleteOwner(long ownerId);
